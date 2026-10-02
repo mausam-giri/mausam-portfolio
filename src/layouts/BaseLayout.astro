@@ -1,0 +1,112 @@
+---
+// BaseLayout.astro - Master layout for mausamgiri.in
+import TelemetryBar from '../components/TelemetryBar.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Mausam Giri — Cloud Systems Architect & WorldSkills Olympian",
+  description = "Cloud Computing-focused Software Engineer. Gold Medalist at Global Skills Challenge Australia 2026, Team India at WorldSkills Shanghai 2026. Scaling production healthcare EHRs & payment orchestration at MantraCare.",
+  image = "/og-image.png"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://mausamgiri.in");
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Mausam Kumar Giri" />
+    <meta name="keywords" content="Mausam Giri, Cloud Engineer, AWS Architect, WorldSkills Shanghai 2026, Global Skills Challenge Australia, Kubernetes, EKS, Payment Orchestration, Electronic Health Records, MantraCare" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" 
+      rel="stylesheet" 
+    />
+
+    <!-- Theme Prevention Flash Script -->
+    <script is:inline>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    </script>
+
+    <!-- JSON-LD Structured Data for Executive Authority -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mausam Kumar Giri",
+        "alternateName": "Mausam Giri",
+        "url": "https://mausamgiri.in",
+        "jobTitle": "Cloud Systems Architect & Software Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "MantraCare Health Pvt. Ltd"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Central University of Haryana"
+        },
+        "sameAs": [
+          "https://github.com/mausam-giri",
+          "https://linkedin.com/in/mausamgiri",
+          "https://skillsprofile.skillbuilder.aws/user/mausamgiri",
+          "https://credly.com/users/mausam-giri/badges"
+        ],
+        "award": [
+          "Gold Medalist in Cloud Computing - Global Skills Challenge Australia 2026",
+          "Team India Competitor in Cloud Computing - WorldSkills Shanghai 2026",
+          "Gold Medalist in Cloud Computing - WorldSkills India Nationals 2026",
+          "Bronze Medalist in Web Technologies - WorldSkills India Nationals 2024"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <TelemetryBar />
+    <Navbar />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

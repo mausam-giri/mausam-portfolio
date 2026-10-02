@@ -1,0 +1,91 @@
+---
+// Navbar.astro - Sleek Minimalist Navigation
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<header class="site-header" id="site-nav">
+  <div class="container nav-container">
+    <a href="/" class="brand-link" aria-label="Mausam Giri Home">
+      <div class="brand-mark" aria-hidden="true">MG</div>
+      <div class="brand-text">
+        <span>Mausam Giri</span>
+      </div>
+    </a>
+
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-links">
+        <li>
+          <a href="/" class={`nav-item-link ${pathname === '/' ? 'active' : ''}`}>Overview</a>
+        </li>
+        <li>
+          <a href="/works" class={`nav-item-link ${pathname.startsWith('/works') ? 'active' : ''}`}>Works & Systems</a>
+        </li>
+        <li>
+          <a href="/resume" class={`nav-item-link ${pathname.startsWith('/resume') ? 'active' : ''}`}>Executive Dossier</a>
+        </li>
+        <li>
+          <a href="/about" class={`nav-item-link ${pathname.startsWith('/about') ? 'active' : ''}`}>About & Vision</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button 
+        type="button" 
+        class="theme-toggle-btn" 
+        id="theme-toggle" 
+        aria-label="Toggle visual theme"
+        title="Toggle dark/light theme"
+      >
+        <svg id="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg id="sun-icon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+
+      <a href="mailto:personal.mausamgiri@gmail.com?subject=Technical%20Leadership%20/%20Engineering%20Role%20Discussion" class="btn-hire" id="nav-hire-btn">
+        <span>Get in Touch</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Theme Toggle Logic
+  const themeToggle = document.getElementById('theme-toggle');
+  const moonIcon = document.getElementById('moon-icon');
+  const sunIcon = document.getElementById('sun-icon');
+
+  function updateIcons(isLight: boolean) {
+    if (moonIcon && sunIcon) {
+      moonIcon.style.display = isLight ? 'none' : 'block';
+      sunIcon.style.display = isLight ? 'block' : 'none';
+    }
+  }
+
+  // Check initial state
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  updateIcons(currentTheme === 'light');
+
+  themeToggle?.addEventListener('click', () => {
+    const isCurrentlyLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const newTheme = isCurrentlyLight ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateIcons(newTheme === 'light');
+  });
+</script>

@@ -1,0 +1,92 @@
+---
+// about.astro - Narrative Journey, Philosophy & Competitive Mentorship
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About & Vision — Mausam Kumar Giri"
+  description="The journey of Mausam Kumar Giri. From competitive cloud arenas in Australia and Shanghai to engineering production healthcare and fintech platforms."
+>
+  <div class="container">
+    <div class="page-header">
+      <span class="section-tag">THE PERSON BEHIND THE ARCHITECTURE</span>
+      <h1 class="section-title">Discipline, Speed & Production Craft</h1>
+      <p class="section-desc">
+        Why competitive engineering under stopwatch pressure changes how you build production systems forever.
+      </p>
+    </div>
+
+    <div style="max-width: 820px; margin: 0 auto 5rem;">
+      <article style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin: 2rem 0 1rem; letter-spacing: -0.02em;">
+          The Stopwatch Mindset
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Most software engineers learn cloud computing in relaxed environments with endless Google searches, trial-and-error deployments, and generous deadlines. My foundation was forged differently.
+        </p>
+        <p style="margin-bottom: 1.5rem;">
+          In the <strong>WorldSkills arena</strong>, you are placed in front of an empty terminal with a countdown timer, a complex technical specification, and an automated grading engine that aggressively tests for failure. If your VPC CIDR blocks overlap, your IAM role grants excessive permissions, or your Kubernetes pod crashes under load, you don't get partial credit—you get zero.
+        </p>
+        <p style="margin-bottom: 2rem;">
+          Winning <strong>Gold at the Global Skills Challenge in Wollongong, Australia (2026)</strong> and representing <strong>Team India at WorldSkills Shanghai 2026</strong> drilled an indelible principle into my work: <em>eliminate ambiguity, automate everything declaratively, and verify resilience before reality forces you to.</em>
+        </p>
+
+        <div class="proof-card" style="margin: 2.5rem 0; border-left: 3px solid var(--accent-gold); padding: 1.5rem 1.75rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-gold); margin-bottom: 0.35rem;">
+            CORE PHILOSOPHY
+          </div>
+          <p style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); line-height: 1.5;">
+            "A system is not truly understood until you can rebuild it from bare code in minutes while alarms are ringing."
+          </p>
+        </div>
+
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin: 2.5rem 0 1rem; letter-spacing: -0.02em;">
+          Bridging the Arena with Production Reality
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          At <strong>MantraCare Health</strong>, I translate this high-stakes discipline into day-to-day software engineering. When you are handling over <strong>20,000 Electronic Health Records</strong>, a bug isn't just an error log—it affects real patients awaiting diagnostic reports or medical consultations.
+        </p>
+        <p style="margin-bottom: 1.5rem;">
+          That is why I obsess over every boundary in the system:
+        </p>
+        <ul style="list-style: square; padding-left: 1.5rem; margin-bottom: 2rem;">
+          <li style="margin-bottom: 0.5rem;">
+            <strong>Transaction Decoupling:</strong> Writing multi-gateway routing logic (Stripe Connect, Razorpay, Airwallex) with Redis idempotency so network drops never cause duplicate charges.
+          </li>
+          <li style="margin-bottom: 0.5rem;">
+            <strong>Data Sovereignty:</strong> Implementing strict HIPAA-compliant role-based access control and KMS envelope encryption.
+          </li>
+          <li style="margin-bottom: 0.5rem;">
+            <strong>Client-Side Grace:</strong> Solving layout shifts in fundamental UI primitives (like Radix UI) and utilizing Web Workers so heavy computations never freeze the user's screen.
+          </li>
+        </ul>
+
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin: 2.5rem 0 1rem; letter-spacing: -0.02em;">
+          Contributing Back: Training the Next Generation
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Having risen from regional qualifiers in Bihar to the national podium and onto the world stage, I am deeply committed to technical mentorship. I actively seek opportunities to contribute as a <strong>Cloud Computing Technical Expert</strong>—helping train and prepare future competitors, designing rigorous training test projects, and sharing battle-tested cloud methodologies.
+        </p>
+      </article>
+
+      <!-- CONTACT CALLOUT -->
+      <div class="recruiter-cta-banner" style="margin-top: 3.5rem;">
+        <div class="recruiter-cta-content">
+          <span class="section-tag">OPEN CONVERSATIONS</span>
+          <h3 class="recruiter-cta-title" style="font-size: 1.8rem;">Let's discuss systems, architecture, or collaboration</h3>
+          <p class="recruiter-cta-desc">
+            Directly reachable for senior engineering opportunities, cloud architecture advisory, or WorldSkills expert training.
+          </p>
+          <div class="recruiter-action-row">
+            <a href="mailto:personal.mausamgiri@gmail.com" class="btn-primary">
+              <span>Send Direct Email</span>
+            </a>
+            <a href="https://linkedin.com/in/mausamgiri" target="_blank" rel="noopener noreferrer" class="quick-contact-pill">
+              <span>Connect on LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

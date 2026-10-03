@@ -44,7 +44,7 @@ img {
 }
 
 .wrap {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1280px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -1224,10 +1224,13 @@ figcaption {
 }
 
 @keyframes pulse-dot {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.55;
     transform: scale(0.9);
@@ -1613,4 +1616,105 @@ figcaption {
 
 .facts-nav-links a:hover {
   text-decoration: underline;
-}
+}
+
+/* ==========================================================================
+   PROJECTS PAGE STYLES
+   ========================================================================== */
+
+.projects-layout {
+  padding: 2.5rem 0 5rem;
+}
+
+.projects-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0 3rem;
+}
+
+.project-showcase-card {
+  padding: 1.5rem 1.65rem;
+  background: var(--raised, #101216);
+  border: 1px solid var(--line, #22262c);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.project-showcase-card:hover {
+  border-color: rgba(243, 180, 192, 0.35);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.project-showcase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-pill {
+  display: inline-block;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.project-headline {
+  margin: 0;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #121416;
+  background: var(--accent);
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: filter 0.15s ease;
+}
+
+.project-link-btn:hover {
+  filter: brightness(1.1);
+}
+
+.project-description {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #c5d0d8;
+}
+
+.project-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tech-tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}

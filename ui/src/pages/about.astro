@@ -15,31 +15,43 @@ const description =
         <p class="kicker">About Me</p>
         <h1 class="page-title">Mausam Kumar Giri</h1>
         <p class="role-lead">
-          Software engineer focused on scalable cloud architecture, healthcare systems, and high-availability backend infrastructure.
+          Software engineer focused on scalable cloud architecture, healthcare
+          systems, and high-availability backend infrastructure.
         </p>
       </div>
 
       <section class="about-section">
         <h2>Engineering Philosophy</h2>
         <p>
-          I build systems that have to stay correct while someone is waiting. When dealing with electronic health records, patient diagnostics dispatch, or multi-provider financial payments, failure isn't an option. I adopt a backend-first mindset, focusing on fault isolation, idempotent workflows, deterministic latency, and automated recovery.
+          I build systems that have to stay correct while someone is waiting.
+          When dealing with electronic health records, patient diagnostics
+          dispatch, or multi-provider financial payments, failure isn't an
+          option. I adopt a backend-first mindset, focusing on fault isolation,
+          idempotent workflows, deterministic latency, and automated recovery.
         </p>
       </section>
 
       <section class="about-section">
         <h2>The Journey & Background</h2>
         <p>
-          Hailing from West Champaran, Bihar, I earned my Bachelor of Technology in Computer Science and Engineering (2021–2025) from the Central University of Haryana with a GPA of 8.52/10.
+          Hailing from West Champaran, Bihar, I earned my Bachelor of Technology
+          in Computer Science and Engineering (2021–2025) from the Central
+          University of Haryana with a GPA of 8.52/10.
         </p>
         <p>
-          My passion lies at the intersection of distributed systems, cloud computing, and real-world software engineering. Early in my journey, I represented Bihar at the IndiaSkills national competition in Web Technologies, winning a bronze medal. That experience ignited a dedicated pursuit of global mastery in cloud infrastructure.
+          My passion lies at the intersection of distributed systems, cloud
+          computing, and real-world software engineering. Early in my journey, I
+          represented Bihar at the IndiaSkills national competition in Web
+          Technologies, winning a bronze medal. That experience ignited a
+          dedicated pursuit of global mastery in cloud infrastructure.
         </p>
       </section>
 
       <section class="about-section">
         <h2>WorldSkills & Competitive Cloud Computing</h2>
         <p>
-          In 2026, I earned the Gold Medal at IndiaSkills in AWS Cloud Computing, securing the honor to represent India on the world stage.
+          In 2026, I earned the Gold Medal at IndiaSkills in AWS Cloud
+          Computing, securing the honor to represent India on the world stage.
         </p>
         <div class="about-highlight-box">
           <div class="highlight-badge-col">
@@ -54,10 +66,13 @@ const description =
           <div>
             <h3>WorldSkills Shanghai 2026 — Champion</h3>
             <p>
-              Awarded for top-tier excellence in architecting, automating, securing, and operating multi-region AWS environments under tight, high-pressure constraints.
+              Awarded for top-tier excellence in architecting, automating,
+              securing, and operating multi-region AWS environments under tight,
+              high-pressure constraints.
             </p>
             <p class="about-sub-note">
-              Also secured Gold in Cloud Computing at the Global Skills Challenge in Wollongong, Australia (2026).
+              Also secured Gold in Cloud Computing at the Global Skills
+              Challenge in Wollongong, Australia (2026).
             </p>
           </div>
         </div>
@@ -70,13 +85,20 @@ const description =
           <span class="exp-period">Feb 2025 – Present</span>
           <ul>
             <li>
-              <strong>Electronic Health Records (EHR):</strong> Designed and architected high-concurrency EHR infrastructure managing 20,000+ patient records with strict HIPAA compliance, granular role-based access control, and insurance claim workflows.
+              <strong>Electronic Health Records (EHR):</strong> Designed and architected
+              high-concurrency EHR infrastructure managing 20,000+ patient records
+              with strict HIPAA compliance, granular role-based access control, and
+              insurance claim workflows.
             </li>
             <li>
-              <strong>Payment Orchestration:</strong> Built unified payment routing supporting Stripe Connect, Razorpay, and Airwallex for cross-border patient consultations and marketplace payouts.
+              <strong>Payment Orchestration:</strong> Built unified payment routing
+              supporting Stripe Connect, Razorpay, and Airwallex for cross-border
+              patient consultations and marketplace payouts.
             </li>
             <li>
-              <strong>Diagnostics Dispatch:</strong> Integrated direct automated order dispatch to laboratory networks including Tata 1mg, Healthians, and Redcliffe Labs.
+              <strong>Diagnostics Dispatch:</strong> Integrated direct automated order
+              dispatch to laboratory networks including Tata 1mg, Healthians, and
+              Redcliffe Labs.
             </li>
           </ul>
         </div>
@@ -86,7 +108,9 @@ const description =
           <span class="exp-period">Jun 2024 – Aug 2024</span>
           <ul>
             <li>
-              Developed a novel cross-domain recommendation system resolving the classic "cold-start" problem, leveraging transformer embeddings to capture cross-domain semantic similarities.
+              Developed a novel cross-domain recommendation system resolving the
+              classic "cold-start" problem, leveraging transformer embeddings to
+              capture cross-domain semantic similarities.
             </li>
           </ul>
         </div>
@@ -110,7 +134,9 @@ const description =
 
       <div class="page-footer-actions">
         <a href="/resume" class="cta-button">View Resume &rarr;</a>
-        <a href={`mailto:${person.email}`} class="cta-button secondary">Contact Mausam</a>
+        <a href={`mailto:${person.email}`} class="cta-button secondary"
+          >Contact Mausam</a
+        >
       </div>
     </article>
 
@@ -119,10 +145,16 @@ const description =
         <p class="facts-label">Quick Facts</p>
         <ul class="facts-list">
           <li><strong>Location:</strong> {person.place}</li>
-          <li><strong>Education:</strong> B.Tech CSE, Central Univ. of Haryana</li>
+          <li>
+            <strong>Education:</strong> B.Tech CSE, Central Univ. of Haryana
+          </li>
           <li><strong>Role:</strong> Software Engineer</li>
           <li><strong>WorldSkills:</strong> Cloud Computing (India)</li>
-          <li><strong>Credentials:</strong> <a href={person.credly} target="_blank" rel="noopener noreferrer">Credly Verified</a></li>
+          <li>
+            <strong>Credentials:</strong>
+            <a href={person.credly} target="_blank" rel="noopener noreferrer"
+              >Credly Verified</a>
+          </li>
         </ul>
       </div>
 
@@ -130,8 +162,14 @@ const description =
         <p class="facts-label">Explore More</p>
         <ul class="facts-nav-links">
           <li><a href="/resume">Detailed Resume</a></li>
-          <li><a href={person.blogs} target="_blank" rel="noopener noreferrer">Technical Blogs &rarr;</a></li>
-          <li><a href={person.tools} target="_blank" rel="noopener noreferrer">Built Tools &rarr;</a></li>
+          <li>
+            <a href={person.blogs} target="_blank" rel="noopener noreferrer"
+              >Technical Blogs &rarr;</a>
+          </li>
+          <li>
+            <a href={person.tools} target="_blank" rel="noopener noreferrer"
+              >Built Tools &rarr;</a>
+          </li>
           <li><a href="/competition">Competition Journey</a></li>
         </ul>
       </div>

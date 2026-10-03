@@ -1,0 +1,92 @@
+---
+import Base from "../layouts/Base.astro";
+import { projects, person } from "../data/site";
+import Icons from "../components/Icons.astro";
+
+const title = "Projects — Mausam Kumar Giri";
+const description =
+  "Featured engineering projects, research systems, and open tools built by Mausam Kumar Giri, software engineer and WorldSkills Cloud Computing Champion.";
+---
+
+<Base title={title} description={description}>
+  <div class="layout projects-layout">
+    <article class="page-article">
+      <div class="page-header-block">
+        <p class="kicker">Portfolio & Engineering</p>
+        <h1 class="page-title">Featured Projects</h1>
+        <p class="role-lead">
+          A collection of production platforms, machine learning research models, and open utilities built across distributed cloud architectures.
+        </p>
+      </div>
+
+      <div class="projects-catalog">
+        {
+          projects.map((project) => (
+            <div class="project-showcase-card">
+              <div class="project-showcase-header">
+                <div>
+                  <span class="project-pill">{project.category}</span>
+                  <h2 class="project-headline">{project.title}</h2>
+                </div>
+                {project.href && (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link-btn"
+                  >
+                    <span>View Project</span>
+                    <Icons name="external" size={13} />
+                  </a>
+                )}
+              </div>
+              <p class="project-description">{project.summary}</p>
+              <div class="project-tags-wrap">
+                {project.tags.map((tag) => (
+                  <span class="tech-tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="page-footer-actions">
+        <a href="/about" class="cta-button secondary">
+          <Icons name="about" size={15} />
+          <span>About Mausam</span>
+        </a>
+        <a href={person.blogs} target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+          <Icons name="blogs" size={15} />
+          <span>Technical Blogs</span>
+          <Icons name="external" size={12} className="external-indicator" />
+        </a>
+        <a href={`mailto:${person.email}`} class="cta-button">
+          <Icons name="email" size={15} />
+          <span>Get in Touch</span>
+        </a>
+      </div>
+    </article>
+
+    <aside class="facts">
+      <div class="aside-profile-card">
+        <p class="facts-label">Project Highlights</p>
+        <ul class="facts-list">
+          <li><strong>Domains:</strong> Cloud, AI/ML, Healthcare, SaaS</li>
+          <li><strong>Tech:</strong> AWS, PyTorch, Node.js, Next.js, Django</li>
+          <li><strong>GitHub:</strong> <a href={person.github} target="_blank" rel="noopener noreferrer">mausam-giri</a></li>
+        </ul>
+      </div>
+
+      <div class="aside-nav-box">
+        <p class="facts-label">Quick Links</p>
+        <ul class="facts-nav-links">
+          <li><a href="/about">About & Academic Background</a></li>
+          <li><a href="/competition">Competition Journey</a></li>
+          <li><a href={person.tools} target="_blank" rel="noopener noreferrer">Free Online Tools &rarr;</a></li>
+          <li><a href={person.blogs} target="_blank" rel="noopener noreferrer">Technical Blogs &rarr;</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</Base>

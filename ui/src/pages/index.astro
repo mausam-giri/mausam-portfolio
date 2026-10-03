@@ -5,13 +5,15 @@ import { Image } from "astro:assets";
 import heroImage from "../assets/worldskills_mausamgiri_3.png";
 import PersonalCard from "../components/PersonalCard.astro";
 import AchievementsCard from "../components/AchievementsCard.astro";
+// import ProjectsCard from "../components/ProjectsCard.astro";
 import BlogsCard from "../components/BlogsCard.astro";
 import ToolsCard from "../components/ToolsCard.astro";
 import ContactCard from "../components/ContactCard.astro";
 
-const title = "Mausam Kumar Giri — Software Engineer & Cloud Computing Champion";
+const title =
+  "Mausam Kumar Giri — Software Engineer & Cloud Computing Champion";
 const description =
-  "Mausam Kumar Giri is a software engineer from West Champaran, Bihar. WorldSkills Shanghai 2026 Champion in Cloud Computing representing Team India. Electronic health records and payment systems engineer.";
+  "Mausam Kumar Giri is a software engineer from West Champaran, Bihar. WorldSkills Shanghai 2026 Champion in Cloud Computing representing Team India. Healthcare and cloud-native systems engineer.";
 ---
 
 <Base title={title} description={description} fullWidth={true}>
@@ -62,10 +64,15 @@ const description =
       </p>
       <p class="actions">
         <a href="/about">About</a>
-        <a href="/resume">Resume</a>
+        <a href="/projects">Projects</a>
+        <a href="/competition">Competition</a>
         <a href={`mailto:${person.email}`}>Email</a>
-        <a href={person.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href={person.blogs} target="_blank" rel="noopener noreferrer">Blogs</a>
+        <a href={person.linkedin} target="_blank" rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+        <a href={person.blogs} target="_blank" rel="noopener noreferrer"
+          >Blogs</a
+        >
       </p>
     </div>
   </section>
@@ -73,16 +80,19 @@ const description =
   <!-- Main Content Layout (Main Cards + Aside) -->
   <section class="wrap content-layout">
     <main class="cards-stream">
-      <!-- 1. Personal Navigation & Overview -->
+      <!-- 1. Personal Navigation Card (About, Projects, Blogs) -->
       <PersonalCard />
 
-      <!-- 2. Achievement Section Showcase -->
+      <!-- 2. Achievement Section Showcase (WorldSkills Champion Badge + Credly) -->
       <AchievementsCard />
 
-      <!-- 3. Top 6 Technical Blogs + More Button -->
+      <!-- 3. Projects Showcase Cards -->
+      <!-- <ProjectsCard /> -->
+
+      <!-- 4. Top 6 Technical Blogs + More Button -->
       <BlogsCard />
 
-      <!-- 4. Built Tools & Utilities -->
+      <!-- 5. Built Tools & Utilities -->
       <ToolsCard />
     </main>
 

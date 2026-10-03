@@ -15,14 +15,21 @@ export const person = {
   credly: "https://www.credly.com/badges/698504d2-02fc-475f-9473-63fd2cb27382",
   credlyProfile: "https://www.credly.com/users/mausam-giri/badges",
   aws: "https://skillsprofile.skillbuilder.aws/user/mausamgiri",
+  resumeUrl: "https://mausamgiri.in",
 };
 
 export const personalLinks = [
   {
     title: "About",
-    summary: "Journey, cloud computing competitions, and background.",
+    summary: "Academic background, engineering philosophy, and resume link.",
     href: "/about",
     icon: "about",
+  },
+  {
+    title: "Projects",
+    summary: "Machine learning research, cloud systems, and production platforms.",
+    href: "/projects",
+    icon: "tools",
   },
   {
     title: "Blogs",
@@ -31,25 +38,8 @@ export const personalLinks = [
     external: true,
     icon: "blogs",
   },
-  {
-    title: "Resume",
-    summary: "Professional timeline, tech stack, and competition record.",
-    href: "/resume",
-    icon: "resume",
-  },
-  {
-    title: "MantraCare",
-    summary: "Production EHR for 20K+ patients and payment orchestration.",
-    href: "/mantracare",
-    icon: "terminal",
-  },
-  {
-    title: "Competition",
-    summary: "WorldSkills Shanghai 2026, Global Skills Australia, IndiaSkills.",
-    href: "/competition",
-    icon: "award",
-  },
 ];
+
 
 export const achievements = [
   {
@@ -183,17 +173,60 @@ export const socials = [
   },
 ];
 
-export const works = [
+export const projects = [
   {
-    href: "/mantracare",
-    meta: "New Delhi · 2025 – Present",
-    title: "MantraCare",
-    summary: "Health records, lab orders dispatch (Tata 1mg, Redcliffe, Healthians), and multi-provider payments.",
+    title: "Cross-Domain Recommendation Engine",
+    category: "ML Research · Cold-Start",
+    summary: "A novel transformer-based cross-domain recommendation system resolving the cold-start problem by utilizing semantic embedding similarity across multi-domain datasets. Engineered diagnostic evaluation dashboard for recommendation benchmarking.",
+    tags: ["PyTorch", "Transformers", "Python", "Semantic Embeddings", "FastAPI"],
+    href: "https://github.com/mausam-giri",
   },
   {
-    href: "/competition",
-    meta: "2024 – 2026",
-    title: "Competition",
-    summary: "WorldSkills Shanghai Champion, Global Skills Challenge Gold, and IndiaSkills Gold in Cloud Computing.",
+    title: "LeadNear B2B Intelligence & Extension",
+    category: "Cloud & Automation",
+    summary: "Production prospect intelligence platform and Chrome extension extracting verified B2B credentials with distributed cloud enrichment pipelines, maintaining 60 FPS UI using background Web Workers.",
+    tags: ["Chrome Extension", "Node.js", "AWS", "Web Workers", "Microservices"],
+    href: "https://chromewebstore.google.com/detail/leadnear-b2b-email-phone/npofkafeajldomiogiiglkfebpnnaagn",
+  },
+  {
+    title: "Pramman Patra Credentialing Platform",
+    category: "Full-Stack & Web",
+    summary: "Digital credential and certificate issuing platform similar to Credly with an interactive canvas template editor, cryptographic signing, and multi-format export for educational and corporate bodies.",
+    tags: ["Next.js", "Canvas API", "TypeScript", "Vercel", "Digital Badges"],
+    href: "https://pramman-editor-v2.vercel.app/",
+  },
+  {
+    title: "MarkForge Markdown Studio",
+    category: "Developer Utilities",
+    summary: "High-performance browser-based markdown documentation studio with real-time rendering, custom styling engines, and precise paginated PDF generation via CSS paged media.",
+    tags: ["Astro", "Web Workers", "Client-side PDF", "CSS Paged Media"],
+    href: "https://tools.mausamgiri.in",
+  },
+  {
+    title: "High-Concurrency Friends Chat",
+    category: "Distributed Backend",
+    summary: "Low-latency bidirectional messaging system featuring Redis-backed session pub/sub, presence tracking, and end-to-end event streaming designed for zero state-loss under network partitions.",
+    tags: ["WebSockets", "Redis Pub/Sub", "Node.js", "Docker", "MongoDB"],
+    href: "https://github.com/mausam-giri",
+  },
+  {
+    title: "GreenView Solar Telemetry",
+    category: "IoT & Cloud",
+    summary: "IoT telemetry ingestion platform tracking distributed solar generation arrays with anomaly alerts, generation analytics, and automated reporting powered by AWS serverless pipelines.",
+    tags: ["AWS IoT", "Lambda", "DynamoDB", "Timeseries", "React"],
+    href: "https://github.com/mausam-giri",
+  },
+];
+
+export const education = [
+  {
+    institution: "Central University of Haryana",
+    degree: "Bachelor of Technology (B.Tech)",
+    field: "Computer Science and Engineering",
+    period: "2021 – 2025",
+    gpa: "8.52 / 10.0",
+    location: "Mahendragarh, Haryana, India",
+    details:
+      "Comprehensive engineering curriculum covering distributed systems, operating systems, algorithms, compiler design, and high-performance cloud networks. Concurrently represented Team India at WorldSkills Shanghai and won Gold at IndiaSkills Nationals.",
   },
 ];

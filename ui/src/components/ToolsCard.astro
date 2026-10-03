@@ -1,0 +1,37 @@
+---
+import { tools } from "../data/site";
+import Icons from "./Icons.astro";
+---
+
+<div class="card-wrapper tools-card">
+  <div class="card-header">
+    <h2 class="card-kicker">Built Utilities & Tools</h2>
+    <span class="card-tag">Open Tools</span>
+  </div>
+  <hr class="card-divider" />
+
+  <div class="tools-grid">
+    {
+      tools.map((tool) => (
+        <a
+          href={tool.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tool-card-item"
+        >
+          <div class="tool-item-header">
+            <span class="tool-icon">
+              <Icons name={tool.icon} size={16} />
+            </span>
+            <div>
+              <span class="tool-tag">{tool.tag}</span>
+              <h3 class="tool-title">{tool.title}</h3>
+            </div>
+            <Icons name="external" size={13} className="external-indicator" />
+          </div>
+          <p class="tool-summary">{tool.summary}</p>
+        </a>
+      ))
+    }
+  </div>
+</div>

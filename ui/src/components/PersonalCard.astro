@@ -1,0 +1,33 @@
+---
+import { personalLinks } from "../data/site";
+import Icons from "./Icons.astro";
+---
+
+<div class="card-wrapper personal-card">
+  <div class="card-header">
+    <h2 class="card-kicker">Navigation & Work</h2>
+    <span class="card-tag">Explore</span>
+  </div>
+  <hr class="card-divider" />
+  <div class="personal-grid">
+    {
+      personalLinks.map((item) => (
+        <a
+          href={item.href}
+          target={item.external ? "_blank" : undefined}
+          rel={item.external ? "noopener noreferrer" : undefined}
+          class="personal-item"
+        >
+          <div class="personal-item-title-row">
+            <span class="personal-icon">
+              <Icons name={item.icon} size={16} />
+            </span>
+            <span class="personal-item-title">{item.title}</span>
+            {item.external && <Icons name="external" size={12} className="external-indicator" />}
+          </div>
+          <p class="personal-item-summary">{item.summary}</p>
+        </a>
+      ))
+    }
+  </div>
+</div>

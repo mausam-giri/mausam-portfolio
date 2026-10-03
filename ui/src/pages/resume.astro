@@ -1,0 +1,98 @@
+---
+import Base from "../layouts/Base.astro";
+import { person } from "../data/site";
+
+const title = "Resume — Mausam Kumar Giri";
+const description =
+  "Resume of Mausam Kumar Giri, software engineer. MantraCare, WorldSkills Shanghai 2026 Champion, Global Skills Challenge Australia 2026, IndiaSkills.";
+---
+
+<Base title={title} description={description}>
+  <div class="layout">
+    <article class="resume">
+      <p class="kicker">{person.place}</p>
+      <h1>{person.name}</h1>
+      <p class="lead">
+        Software engineer focused on cloud architecture and distributed backend infrastructure. Cloud computing for India at WorldSkills Shanghai 2026. Gold in cloud computing at the Global Skills Challenge, Wollongong, and at IndiaSkills 2026. Production systems at MantraCare.
+      </p>
+      <p class="actions">
+        <a href={`mailto:${person.email}`}>{person.email}</a>
+        <a href={`tel:${person.phone.replace(/\s/g, "")}`}>{person.phone}</a>
+        <a href={person.site}>mausamgiri.in</a>
+        <a href={person.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href={person.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+
+      <h2>Competitions & Honors</h2>
+      <ul>
+        <li>
+          <strong>WorldSkills Shanghai 2026</strong> — Champion, Cloud Computing, Team India. <a href={person.credly} target="_blank" rel="noopener noreferrer">Verified Credly Badge</a>
+        </li>
+        <li>
+          <strong>Global Skills Challenge Australia 2026 (Wollongong)</strong> — Gold Medalist, Cloud Computing. <a href="https://ddnews.gov.in/en/team-india-wins-5-medals-at-global-skills-challenge-australia-2026-strengthens-worldskills-shanghai-preparations/" target="_blank" rel="noopener noreferrer">DD News Coverage</a>
+        </li>
+        <li>
+          <strong>IndiaSkills 2026</strong> — Gold Medalist, AWS Cloud Computing (Ranked #1 Nationwide).
+        </li>
+        <li>
+          <strong>IndiaSkills 2024</strong> — Bronze Medalist, Web Technologies, West Champaran, Bihar.
+        </li>
+      </ul>
+
+      <h2>Work Experience</h2>
+      <ul>
+        <li>
+          <strong>Software Engineer, MantraCare (New Delhi)</strong> — February 2025 – Present.
+          Designed and scaled Electronic Health Records (EHR) infrastructure managing 20,000+ patient records. Built unified multi-provider payment routing across Stripe Connect, Razorpay, and Airwallex. Integrated automated laboratory dispatch with Tata 1mg, Healthians, and Redcliffe Labs.
+        </li>
+        <li>
+          <strong>Machine Learning Research Intern, NIT Kurukshetra</strong> — June 2024 – August 2024.
+          Researched cross-domain recommendation models to solve the user cold-start challenge, leveraging transformer embeddings to map shared latent representations across disparate domains.
+        </li>
+        <li>
+          <strong>Frontend Web Developer Intern, Estrome Technologies</strong> — June 2023 – August 2023.
+          Architected data-driven administrative dashboards with background Web Worker PDF generation, automated email triggers, and high-performance frontend state caching.
+        </li>
+      </ul>
+
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Cloud & DevOps:</strong> AWS (EC2, ECS, Lambda, API Gateway, DynamoDB, S3, CloudFront, Transit Gateway, AppConfig, Bedrock, AppSync), Docker, Terraform, CloudFormation, CI/CD.</li>
+        <li><strong>Languages:</strong> TypeScript, JavaScript, Python, Go, SQL, HTML5/CSS3.</li>
+        <li><strong>Frameworks & Libraries:</strong> Node.js, Express, Next.js, Astro, React, Prisma ORM.</li>
+        <li><strong>Databases & Storage:</strong> DynamoDB, PostgreSQL, MySQL, Redis.</li>
+      </ul>
+
+      <h2>Featured Projects & Built Tools</h2>
+      <ul>
+        <li>
+          <strong>MarkForge:</strong> Markdown to PDF converter with instant live preview, custom CSS rendering, and print-optimized typography. (<a href={person.tools} target="_blank" rel="noopener noreferrer">tools.mausamgiri.in</a>)
+        </li>
+        <li>
+          <strong>Pramman Patra:</strong> Digital credential issuance and verification platform with canvas-based badge design and cryptographic proof.
+        </li>
+        <li>
+          <strong>LeadNear Chrome Extension:</strong> High-performance browser extension automating B2B LinkedIn contact enrichment and outreach workflows.
+        </li>
+      </ul>
+
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>Bachelor of Technology in Computer Science & Engineering</strong> — Central University of Haryana (2021–2025). GPA: 8.52 / 10.
+        </li>
+      </ul>
+
+      <h2>Credentials & Profiles</h2>
+      <ul>
+        <li><a href={person.credly} target="_blank" rel="noopener noreferrer">Credly Badge: WorldSkills Champion</a></li>
+        <li><a href={person.aws} target="_blank" rel="noopener noreferrer">AWS Skills Profile</a></li>
+        <li><a href={person.blogs} target="_blank" rel="noopener noreferrer">Technical Blogs (blogs.mausamgiri.in)</a></li>
+      </ul>
+    </article>
+
+    <p class="facts no-print">
+      <button class="link" type="button" onclick="window.print()">Print Resume</button>
+    </p>
+  </div>
+</Base>

@@ -1,0 +1,49 @@
+---
+import { person, socials } from "../data/site";
+import Icons from "./Icons.astro";
+---
+
+<div class="aside-card contact-card">
+  <div class="aside-header">
+    <div class="aside-title-row">
+      <span class="aside-status-dot"></span>
+      <h2 class="card-kicker">Get in Touch</h2>
+    </div>
+    <span class="aside-sub">Open for new opportunities</span>
+  </div>
+  <hr class="card-divider" />
+
+  <div class="contact-links-list">
+    {
+      socials.map((social) => (
+        <a
+          href={social.href}
+          target={social.href.startsWith("mailto") ? undefined : "_blank"}
+          rel={social.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+          class="contact-link-row"
+        >
+          <span class="contact-icon-box">
+            <Icons name={social.icon} size={16} />
+          </span>
+          <div class="contact-text-wrap">
+            <span class="contact-platform">{social.name}</span>
+            <span class="contact-handle">{social.handle}</span>
+          </div>
+          <Icons name="arrow" size={12} className="contact-arrow" />
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="location-banner">
+    <Icons name="location" size={15} />
+    <span>{person.place}</span>
+  </div>
+
+  <div class="contact-cta-wrap">
+    <a href={`mailto:${person.email}`} class="contact-email-btn">
+      <Icons name="email" size={15} />
+      <span>Send an Email</span>
+    </a>
+  </div>
+</div>

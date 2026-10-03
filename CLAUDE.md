@@ -1,9 +1,9 @@
 ## Development
 
-When starting the dev server, use background mode:
+When starting the dev server, use background mode from `ui`:
 
 ```
-astro dev --background
+cd ui && astro dev --background
 ```
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.

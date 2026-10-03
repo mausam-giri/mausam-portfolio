@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "MantraCare — Mausam Kumar Giri";
+const description =
+  "Software engineering at MantraCare: health records, lab orders to Tata 1mg, Healthians, and Redcliffe, and payments across Stripe, Razorpay, and Airwallex.";
+---
+
+<Base title={title} description={description}>
+  <article class="page">
+    <p class="kicker">New Delhi · February 2025 –</p>
+    <h1>MantraCare</h1>
+    <p class="lead">
+      Software engineer. The platform is for care: a record a doctor can use, a lab order that comes back, and a payment that does not get lost.
+    </p>
+
+    <h2>Payments</h2>
+    <p>
+      Patients pay in more than one way. UPI in India, cards abroad, and a split when more than one party is paid. I built the routing in front of Razorpay, Stripe Connect, and Airwallex. The route depends on country, currency, card, and size. If a webhook never arrives, a worker checks the provider and the appointment still confirms.
+    </p>
+
+    <h2>Records and lab orders</h2>
+    <p>
+      The record holds more than 20,000 patient histories. Notes can be written in more than one language. Access is by role. From the same system, an order can go to Tata 1mg, Healthians, or Redcliffe Labs, and the report comes back onto the record.
+    </p>
+
+    <h2>The daily loop</h2>
+    <p>
+      Between visits, a clinician can assign a small set of activities. More than 50,000 people use it. Sustained engagement rose about 20%. It has to be light enough to open every day, and exact enough that a clinician can trust it.
+    </p>
+  </article>
+</Base>

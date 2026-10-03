@@ -1,0 +1,55 @@
+---
+import { blogs, person } from "../data/site";
+import Icons from "./Icons.astro";
+---
+
+<div class="card-wrapper blogs-card">
+  <div class="card-header">
+    <div>
+      <h2 class="card-kicker">Top Technical Blogs</h2>
+      <p class="card-subtitle">AWS architectures, distributed systems, and real-world infrastructure runbooks.</p>
+    </div>
+    <a
+      href={person.blogs}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="more-blogs-btn top-btn"
+    >
+      <span>All Posts</span>
+      <Icons name="arrow" size={14} />
+    </a>
+  </div>
+  <hr class="card-divider" />
+
+  <div class="blogs-grid">
+    {
+      blogs.slice(0, 6).map((blog) => (
+        <a
+          href={blog.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="blog-card-item"
+        >
+          <div class="blog-meta-row">
+            <span class="blog-category-tag">{blog.tag}</span>
+            <Icons name="external" size={12} className="blog-link-icon" />
+          </div>
+          <h3 class="blog-card-title">{blog.title}</h3>
+          <p class="blog-card-summary">{blog.summary}</p>
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="blogs-footer">
+    <a
+      href={person.blogs}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="more-blogs-btn main-btn"
+    >
+      <span>Read More on blogs.mausamgiri.in</span>
+      <Icons name="arrow" size={14} />
+    </a>
+  </div>
+</div>

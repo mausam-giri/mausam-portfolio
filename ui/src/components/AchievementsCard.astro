@@ -1,0 +1,76 @@
+---
+import { achievements } from "../data/site";
+import Icons from "./Icons.astro";
+---
+
+<div class="card-wrapper achievements-card">
+  <div class="card-header">
+    <h2 class="card-kicker">Honors & Achievements</h2>
+    <span class="card-tag">WorldSkills · India</span>
+  </div>
+  <hr class="card-divider" />
+
+  <!-- Featured WorldSkills Champion Badge Showcase -->
+  {
+    achievements.filter(a => a.badgeImg).map((featured) => (
+      <a
+        href={featured.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="champion-feature"
+      >
+        <div class="badge-glow-wrap">
+          <img
+            src={featured.badgeImg}
+            alt={featured.title}
+            class="champion-badge-img"
+            width="120"
+            height="120"
+            loading="lazy"
+          />
+        </div>
+        <div class="champion-info">
+          <div class="champion-meta-row">
+            <span class="achievement-pill">{featured.category}</span>
+            <span class="verified-tag">
+              <Icons name="award" size={12} /> Verified Credly
+            </span>
+          </div>
+          <h3 class="champion-title">{featured.title}</h3>
+          <p class="champion-desc">{featured.summary}</p>
+        </div>
+      </a>
+    ))
+  }
+
+  <!-- List of National & International Medals -->
+  <div class="achievements-list">
+    {
+      achievements.filter(a => !a.badgeImg).map((item) => (
+        <a
+          href={item.href}
+          target={item.href.startsWith("http") ? "_blank" : undefined}
+          rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+          class="achievement-row"
+        >
+          <div class="achievement-left">
+            <span class="medal-icon">
+              <Icons name="award" size={16} />
+            </span>
+            <div>
+              <div class="achievement-title-row">
+                <span class="achievement-name">{item.title}</span>
+                <span class="achievement-year">{item.year}</span>
+              </div>
+              <p class="achievement-sub">{item.category}</p>
+              <p class="achievement-summary">{item.summary}</p>
+            </div>
+          </div>
+          {item.href.startsWith("http") && (
+            <Icons name="external" size={13} className="external-indicator" />
+          )}
+        </a>
+      ))
+    }
+  </div>
+</div>

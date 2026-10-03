@@ -1,0 +1,94 @@
+---
+import "../styles/base.css";
+import { person } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  fullWidth?: boolean;
+}
+
+const { title, description, fullWidth = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const nav = [
+  { href: "/about", label: "About" },
+  { href: "/mantracare", label: "MantraCare" },
+  { href: "/competition", label: "Competition" },
+  { href: "/resume", label: "Resume" },
+  { href: person.blogs, label: "Blogs", external: true },
+  { href: person.tools, label: "Tools", external: true },
+];
+
+function current(href: string) {
+  return path === href || path.startsWith(`${href}/`);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={person.name} />
+    <meta name="theme-color" content="#07080a" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header class="site-header wrap">
+      <a class="brand" href="/">
+        <span class="mark">MG</span>
+        <span>
+          {person.shortName}
+          <small>{person.place}</small>
+        </span>
+      </a>
+      <nav>
+        {
+          nav.map((item) => (
+            <a
+              href={item.href}
+              aria-current={
+                !item.external && current(item.href) ? "page" : undefined
+              }
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+    {
+      fullWidth ? (
+        <slot />
+      ) : (
+        <main class="wrap">
+          <slot />
+        </main>
+      )
+    }
+    <footer class="site-footer wrap">
+      <a href={`mailto:${person.email}`}>{person.email}</a>
+      <a href={person.linkedin}>LinkedIn</a>
+      <a href={person.github}>GitHub</a>
+      <a href={person.blogs}>Blogs</a>
+      <a href={person.tools}>Tools</a>
+    </footer>
+  </body>
+</html>

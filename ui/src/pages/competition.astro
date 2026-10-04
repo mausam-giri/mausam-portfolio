@@ -17,9 +17,9 @@ const competitions = [
     medalClass: "medal-champ",
     icon: "award",
     summary:
-      "Represented India on the highest international stage in AWS Cloud Computing. Under tight time constraints and strict grading criteria, designed multi-region architectures, automated container deployments (EKS/ECS), established zero-trust IAM boundaries, and conducted real-time disaster recovery.",
+      "Represented India on the international stage in AWS Cloud Computing. Designed multi-region architectures, automated container deployments (EKS/ECS), established zero-trust IAM boundaries, conducted real-time disaster recovery and much more.",
     details:
-      "The competition floor in Shanghai brings together the world's elite champions across 60+ skills. Competed under intense pressure over 4 gruelling days.",
+      "The competition floor in Shanghai brings together the world's champions across 60+ skills. Competed under intense pressure over 4 gruelling days.",
     sourceName: "WorldSkills International",
     sourceUrl: "https://worldskills2026.com/skills/cloud-computing/",
     verifiedBadge: true,
@@ -53,9 +53,8 @@ const competitions = [
       "Ranked #1 nationwide across all state champions in AWS Cloud Computing to earn the sole honor of representing Team India at WorldSkills Shanghai. Mastered complex VPC Peering, Transit Gateways, serverless orchestration, and automated infrastructure as code.",
     details:
       "Supported by Bihar Skill Development Mission (BSDM), ETHNUS, and national technical experts throughout rigorous multi-phase preparation camps.",
-    sourceName: "Bihar Skill Development Mission",
-    sourceUrl:
-      "https://staging-skillmissionbihar.mkcl.org/world-skill/india-skill-competition-2024/timeline",
+    // sourceName: "",
+    // sourceUrl: "#",
     verifiedBadge: false,
   },
   {
@@ -86,7 +85,9 @@ const competitions = [
         <p class="kicker">Team India · 2024 – 2026</p>
         <h1 class="page-title">Skill Competitions</h1>
         <p class="role-lead">
-          From state-level web engineering to representing Team India on the world stage in AWS Cloud Computing: architecting, securing, and automating distributed systems under the clock.
+          From state-level web engineering to representing Team India on the
+          world stage in AWS Cloud Computing: architecting, securing, and
+          automating distributed systems under the clock.
         </p>
       </div>
 
@@ -101,10 +102,17 @@ const competitions = [
         />
         <div class="competition-photo-caption">
           <span>
-            <strong>WorldSkills Shanghai Arena</strong> — The international competition workstation.
+            <strong>WorldSkills Shanghai Arena</strong> — The international competition
+            workstation.
           </span>
           <span class="hero-nation" style="margin: 0; font-size: 0.72rem;">
-            <img src="/flag_of_india.svg" alt="India" width="18" height="12" style="border-radius: 2px;" />
+            <img
+              src="/flag_of_india.svg"
+              alt="India"
+              width="18"
+              height="12"
+              style="border-radius: 2px;"
+            />
             Team India
           </span>
         </div>
@@ -124,7 +132,9 @@ const competitions = [
         <div>
           <h3>WorldSkills Shanghai 2026 — Champion</h3>
           <p>
-            Demonstrated world-class proficiency in multi-region cloud topology design, automated recovery pipelines, and zero-loss network operations. Formally recognized and credentialed on Credly.
+            Demonstrated world-class proficiency in multi-region cloud topology
+            design, automated recovery pipelines, and zero-loss network
+            operations. Formally recognized and credentialed on Credly.
           </p>
           <a
             href={person.credly}
@@ -162,13 +172,18 @@ const competitions = [
                 </div>
 
                 <p class="competition-card-desc">{item.summary}</p>
-                <p class="competition-card-desc" style="font-size: 0.88rem; color: var(--muted); margin-bottom: 0.75rem;">
+                <p
+                  class="competition-card-desc"
+                  style="font-size: 0.88rem; color: var(--muted); margin-bottom: 0.75rem;"
+                >
                   {item.details}
                 </p>
 
-                <div class="competition-card-footer">
-                  <span class="competition-sub-notes">Verified Competitor Record</span>
-                  {item.sourceUrl && (
+                {item.sourceUrl && (
+                  <div class="competition-card-footer">
+                    <span class="competition-sub-notes">
+                      Verified Competitor Record
+                    </span>
                     <a
                       href={item.sourceUrl}
                       target="_blank"
@@ -178,8 +193,8 @@ const competitions = [
                       <span>{item.sourceName}</span>
                       <Icons name="external" size={12} />
                     </a>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             ))
           }
@@ -187,21 +202,25 @@ const competitions = [
       </section>
 
       <!-- Technical Domains Tested Under Clock -->
-      <section class="about-section">
+      <!-- <section class="about-section">
         <h2>Competition Disciplines & Core Tasks</h2>
         <p>
-          Every module at WorldSkills tests engineering rigor under strict, real-time stopwatch conditions:
+          Every module at WorldSkills tests engineering rigor under strict,
+          real-time stopwatch conditions:
         </p>
         <div class="tech-pills-wrap">
           <span class="tech-pill">Multi-Region VPC & Transit Gateways</span>
           <span class="tech-pill">Amazon EKS & Kubernetes Deployments</span>
           <span class="tech-pill">Serverless & DynamoDB Single-Table</span>
-          <span class="tech-pill">IAM Least-Privilege & KMS Envelope Encryption</span>
+          <span class="tech-pill"
+            >IAM Least-Privilege & KMS Envelope Encryption</span
+          >
           <span class="tech-pill">Traffic Inspection & Network Firewalls</span>
           <span class="tech-pill">Automated Terraform & CloudFormation</span>
-          <span class="tech-pill">Live Incident Troubleshooting & Recovery</span>
+          <span class="tech-pill">Live Incident Troubleshooting & Recovery</span
+          >
         </div>
-      </section>
+      </section> -->
 
       <!-- Bottom Footer Navigation Actions -->
       <div class="page-footer-actions">

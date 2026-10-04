@@ -48,11 +48,12 @@ const description =
       <section class="about-section">
         <h2>The Journey & Foundation</h2>
         <p>
-          Hailing from West Champaran, Bihar, I combine deep academic foundations
-          in computer science with hands-on systems programming and cloud engineering.
-          Early in my journey, I represented Bihar at the IndiaSkills national
-          competition in Web Technologies, winning a bronze medal. That experience
-          ignited a dedicated pursuit of global mastery in cloud infrastructure and distributed architecture.
+          I combine deep academic foundations in computer science with hands-on
+          systems programming and cloud engineering. Early in my journey, I
+          participated in IndiaSkills national competition in Cloud Computing,
+          where I got selected for the WorldSkills competition. That experience
+          ignited a dedicated pursuit of mastery in cloud infrastructure and
+          distributed architecture.
         </p>
       </section>
 
@@ -73,22 +74,20 @@ const description =
             />
           </div>
           <div>
-            <h3>WorldSkills Shanghai 2026 — Champion</h3>
-            <p>
-              Awarded for top-tier excellence in architecting, automating,
-              securing, and operating multi-region AWS environments under tight,
-              high-pressure constraints.
-            </p>
-            <p class="about-sub-note">
-              Also secured Gold in Cloud Computing at the Global Skills
-              Challenge in Wollongong, Australia (2026).
-            </p>
+            <a href={person.credly} class="link-no-underline">
+              <h3>WorldSkills Shanghai 2026 — Champion</h3>
+              <p>
+                Awarded for top-tier excellence in architecting, automating,
+                securing, and operating multi-region AWS environments under
+                tight, high-pressure constraints.
+              </p>
+            </a>
           </div>
         </div>
       </section>
 
       <section class="about-section">
-        <h2>Experience & Academic Background</h2>
+        <h2>Experience</h2>
 
         <div class="experience-block">
           <div class="exp-header-row">
@@ -100,7 +99,8 @@ const description =
             <li>
               <strong>Electronic Health Records (EHR):</strong> Designed and architected
               high-concurrency EHR infrastructure managing 20,000+ patient records
-              with HIPAA compliance, granular role-based access control (RBAC), and insurance workflows.
+              with HIPAA compliance, granular role-based access control (RBAC), and
+              insurance workflows.
             </li>
             <li>
               <strong>Payment Orchestration:</strong> Built unified payment routing
@@ -127,30 +127,14 @@ const description =
           <p class="exp-location">Haryana, India</p>
           <ul>
             <li>
-              Developed a novel transformer-based cross-domain recommendation system resolving the
-              classic "cold-start" problem, leveraging transformer embeddings to
-              capture cross-domain semantic similarities.
+              Developed a novel transformer-based cross-domain recommendation
+              system resolving the classic "cold-start" problem, leveraging
+              transformer embeddings to capture cross-domain semantic
+              similarities.
             </li>
             <li>
-              Engineered an interactive diagnostic and evaluation web dashboard for recommendation benchmarking.
-            </li>
-          </ul>
-        </div>
-
-        <div class="experience-block academic-timeline-entry">
-          <div class="exp-header-row">
-            <h3>B.Tech in Computer Science & Engineering — Central University of Haryana</h3>
-            <span class="exp-period">2021 – 2025</span>
-          </div>
-          <p class="exp-location">GPA: 8.52 / 10.0 · Mahendragarh, Haryana, India</p>
-          <ul>
-            <li>
-              <strong>Core Engineering Curriculum:</strong> Rigorous foundation in Distributed Systems,
-              Operating Systems, Database Management Systems, Computer Networks, and Cloud Infrastructure.
-            </li>
-            <li>
-              <strong>Academic & Competitive Record:</strong> Graduated with an 8.52 CGPA while concurrently representing
-              Bihar at IndiaSkills and earning selection to Team India for WorldSkills Shanghai in Cloud Computing.
+              Engineered an interactive diagnostic and evaluation web dashboard
+              for recommendation benchmarking.
             </li>
           </ul>
         </div>
@@ -163,12 +147,44 @@ const description =
           <p class="exp-location">Lucknow, India</p>
           <ul>
             <li>
-              Developed an enterprise analytics and lead management portal with client-side dynamic PDF compilation using background Web Workers to maintain 60 FPS UI responsiveness.
+              Developed an enterprise analytics and lead management portal with
+              client-side dynamic PDF compilation using background Web Workers
+              to maintain 60 FPS UI responsiveness.
             </li>
             <li>
-              Improved Core Web Vitals and organic SEO metrics by approximately 30%.
+              Improved Core Web Vitals and organic SEO metrics by approximately
+              30%.
             </li>
           </ul>
+        </div>
+
+        <div>
+          <h2>Academic Background</h2>
+          <div class="experience-block academic-timeline-entry">
+            <div class="exp-header-row">
+              <h3>
+                B.Tech in Computer Science & Engineering — Central University of
+                Haryana
+              </h3>
+              <span class="exp-period">2021 – 2025</span>
+            </div>
+            <p class="exp-location">
+              GPA: 8.52 / 10.0 · Mahendragarh, Haryana, India
+            </p>
+            <ul>
+              <li>
+                <strong>Core Engineering Curriculum:</strong> Rigorous foundation
+                in Distributed Systems, Operating Systems, Database Management Systems,
+                Computer Networks, and Cloud Infrastructure.
+              </li>
+              <li>
+                <strong>Academic & Competitive Record:</strong> Graduated with an
+                8.52 CGPA while concurrently representing Bihar at IndiaSkills and
+                earning selection to Team India for WorldSkills Shanghai in Cloud
+                Computing.
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -208,7 +224,7 @@ const description =
     </article>
 
     <aside class="facts">
-      <div class="aside-profile-card">
+      <!-- <div class="aside-profile-card">
         <p class="facts-label">Quick Facts</p>
         <ul class="facts-list">
           <li><strong>Location:</strong> {person.place}</li>
@@ -224,13 +240,17 @@ const description =
             >
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <div class="aside-nav-box">
         <p class="facts-label">Explore More</p>
         <ul class="facts-nav-links">
           <li>
-            <a href={person.resumeUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              href={person.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Online Resume / CV &rarr;
             </a>
           </li>

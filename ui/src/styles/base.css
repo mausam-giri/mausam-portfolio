@@ -120,7 +120,7 @@ img {
   margin-bottom: 2vw;
 }
 
-.hero > img {
+.hero>img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -132,20 +132,16 @@ img {
 
 .hero-sharp {
   filter: grayscale(1) contrast(1.04) brightness(0.92);
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    #000 24%,
-    #000 82%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    #000 24%,
-    #000 82%,
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(90deg,
+      transparent 0%,
+      #000 24%,
+      #000 82%,
+      transparent 100%);
+  mask-image: linear-gradient(90deg,
+      transparent 0%,
+      #000 24%,
+      #000 82%,
+      transparent 100%);
 }
 
 .hero-flag {
@@ -159,20 +155,16 @@ img {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(12, 14, 20, 0.8) 0%,
       rgba(12, 14, 20, 0.35) 42%,
       rgba(12, 14, 20, 0.1) 68%,
-      rgba(12, 14, 20, 0.5) 100%
-    ),
-    linear-gradient(
-      180deg,
+      rgba(12, 14, 20, 0.5) 100%),
+    linear-gradient(180deg,
       rgba(12, 14, 20, 0.25) 0%,
       transparent 28%,
       transparent 60%,
-      var(--paper) 100%
-    );
+      var(--paper) 100%);
 }
 
 .hero-copy {
@@ -193,6 +185,7 @@ img {
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
+
 
 .hero-bar-box {
   padding: 0.5rem 0.75rem;
@@ -417,11 +410,11 @@ h1 {
   padding: 2rem 0 4rem;
 }
 
-.layout > article {
+.layout>article {
   flex: 75%;
 }
 
-.layout > aside {
+.layout>aside {
   flex: 25%;
 }
 
@@ -569,7 +562,7 @@ figcaption {
     padding: 1.6rem 1.4rem 1.6rem 0;
   }
 
-  .entry + .entry {
+  .entry+.entry {
     padding-left: 1.4rem;
     border-bottom: 0;
     border-left: 1px solid var(--line);
@@ -628,7 +621,7 @@ figcaption {
     border-bottom: 0;
   }
 
-  .info-col + .info-col {
+  .info-col+.info-col {
     padding-left: 1.4rem;
     border-left: 1px solid var(--line);
   }
@@ -695,7 +688,7 @@ figcaption {
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 1.5rem;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 }
 
 @media (min-width: 960px) {
@@ -862,11 +855,9 @@ figcaption {
   flex-direction: column;
   gap: 1.25rem;
   padding: 1.25rem;
-  background: linear-gradient(
-    135deg,
-    rgba(243, 180, 192, 0.06) 0%,
-    rgba(16, 18, 22, 0.6) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(243, 180, 192, 0.06) 0%,
+      rgba(16, 18, 22, 0.6) 100%);
   border: 1px solid rgba(243, 180, 192, 0.28);
   border-radius: 10px;
   text-decoration: none;
@@ -1284,6 +1275,7 @@ figcaption {
 }
 
 @keyframes pulse-dot {
+
   0%,
   100% {
     opacity: 1;
@@ -1853,6 +1845,11 @@ figcaption {
   color: var(--ink);
 }
 
+.competition-photo-frame .hero-nation img {
+  height: 12px;
+  width: 18px;
+}
+
 .competition-timeline-grid {
   display: flex;
   flex-direction: column;
@@ -1966,4 +1963,8 @@ figcaption {
 .competition-sub-notes {
   font-size: 0.8rem;
   color: var(--muted);
+}
+
+.link-no-underline {
+  text-decoration: none !important;
 }

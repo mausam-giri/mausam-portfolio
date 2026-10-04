@@ -1,11 +1,11 @@
 ---
 import Base from "../layouts/Base.astro";
-import { person, achievements, works } from "../data/site";
+import { person, achievements } from "../data/site";
 import Icons from "../components/Icons.astro";
 
 const title = "About — Mausam Kumar Giri";
 const description =
-  "About Mausam Kumar Giri, software engineer and Team India Cloud Computing Champion at WorldSkills Shanghai 2026. Background, engineering philosophy, and journey.";
+  "About Mausam Kumar Giri, software engineer and Team India Cloud Computing Champion at WorldSkills Shanghai 2026. Academic background, engineering philosophy, and experience.";
 ---
 
 <Base title={title} description={description}>
@@ -18,6 +18,20 @@ const description =
           Software engineer focused on scalable cloud architecture, healthcare
           systems, and high-availability backend infrastructure.
         </p>
+        <div class="about-hero-actions">
+          <a
+            href={person.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button"
+          >
+            <span>View Resume / CV</span>
+            <Icons name="external" size={13} />
+          </a>
+          <a href={`mailto:${person.email}`} class="cta-button secondary">
+            <span>Email Mausam</span>
+          </a>
+        </div>
       </div>
 
       <section class="about-section">
@@ -32,18 +46,13 @@ const description =
       </section>
 
       <section class="about-section">
-        <h2>The Journey & Background</h2>
+        <h2>The Journey & Foundation</h2>
         <p>
-          Hailing from West Champaran, Bihar, I earned my Bachelor of Technology
-          in Computer Science and Engineering (2021–2025) from the Central
-          University of Haryana with a GPA of 8.52/10.
-        </p>
-        <p>
-          My passion lies at the intersection of distributed systems, cloud
-          computing, and real-world software engineering. Early in my journey, I
-          represented Bihar at the IndiaSkills national competition in Web
-          Technologies, winning a bronze medal. That experience ignited a
-          dedicated pursuit of global mastery in cloud infrastructure.
+          Hailing from West Champaran, Bihar, I combine deep academic foundations
+          in computer science with hands-on systems programming and cloud engineering.
+          Early in my journey, I represented Bihar at the IndiaSkills national
+          competition in Web Technologies, winning a bronze medal. That experience
+          ignited a dedicated pursuit of global mastery in cloud infrastructure and distributed architecture.
         </p>
       </section>
 
@@ -79,16 +88,19 @@ const description =
       </section>
 
       <section class="about-section">
-        <h2>Production Systems & Research</h2>
+        <h2>Experience & Academic Background</h2>
+
         <div class="experience-block">
-          <h3>Software Engineer — MantraCare (New Delhi)</h3>
-          <span class="exp-period">Feb 2025 – Present</span>
+          <div class="exp-header-row">
+            <h3>Software Engineer — MantraCare Health</h3>
+            <span class="exp-period">Feb 2025 – Present</span>
+          </div>
+          <p class="exp-location">New Delhi, India</p>
           <ul>
             <li>
               <strong>Electronic Health Records (EHR):</strong> Designed and architected
               high-concurrency EHR infrastructure managing 20,000+ patient records
-              with strict HIPAA compliance, granular role-based access control, and
-              insurance claim workflows.
+              with HIPAA compliance, granular role-based access control (RBAC), and insurance workflows.
             </li>
             <li>
               <strong>Payment Orchestration:</strong> Built unified payment routing
@@ -100,17 +112,61 @@ const description =
               dispatch to laboratory networks including Tata 1mg, Healthians, and
               Redcliffe Labs.
             </li>
+            <li>
+              <strong>Engagement Telemetry:</strong> Scaled reward-based habit engine
+              serving 50,000+ active users (+20% sustained engagement).
+            </li>
           </ul>
         </div>
 
         <div class="experience-block">
-          <h3>Machine Learning Research Intern — NIT Kurukshetra</h3>
-          <span class="exp-period">Jun 2024 – Aug 2024</span>
+          <div class="exp-header-row">
+            <h3>Machine Learning Research Intern — NIT Kurukshetra</h3>
+            <span class="exp-period">Jun 2024 – Aug 2024</span>
+          </div>
+          <p class="exp-location">Haryana, India</p>
           <ul>
             <li>
-              Developed a novel cross-domain recommendation system resolving the
+              Developed a novel transformer-based cross-domain recommendation system resolving the
               classic "cold-start" problem, leveraging transformer embeddings to
               capture cross-domain semantic similarities.
+            </li>
+            <li>
+              Engineered an interactive diagnostic and evaluation web dashboard for recommendation benchmarking.
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-block academic-timeline-entry">
+          <div class="exp-header-row">
+            <h3>B.Tech in Computer Science & Engineering — Central University of Haryana</h3>
+            <span class="exp-period">2021 – 2025</span>
+          </div>
+          <p class="exp-location">GPA: 8.52 / 10.0 · Mahendragarh, Haryana, India</p>
+          <ul>
+            <li>
+              <strong>Core Engineering Curriculum:</strong> Rigorous foundation in Distributed Systems,
+              Operating Systems, Database Management Systems, Computer Networks, and Cloud Infrastructure.
+            </li>
+            <li>
+              <strong>Academic & Competitive Record:</strong> Graduated with an 8.52 CGPA while concurrently representing
+              Bihar at IndiaSkills and earning selection to Team India for WorldSkills Shanghai in Cloud Computing.
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-block">
+          <div class="exp-header-row">
+            <h3>Frontend Web Development Intern — Estrome Technologies</h3>
+            <span class="exp-period">Jun 2023 – Aug 2023</span>
+          </div>
+          <p class="exp-location">Lucknow, India</p>
+          <ul>
+            <li>
+              Developed an enterprise analytics and lead management portal with client-side dynamic PDF compilation using background Web Workers to maintain 60 FPS UI responsiveness.
+            </li>
+            <li>
+              Improved Core Web Vitals and organic SEO metrics by approximately 30%.
             </li>
           </ul>
         </div>
@@ -133,10 +189,21 @@ const description =
       </section>
 
       <div class="page-footer-actions">
-        <a href="/resume" class="cta-button">View Resume &rarr;</a>
-        <a href={`mailto:${person.email}`} class="cta-button secondary"
-          >Contact Mausam</a
+        <a
+          href={person.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-button"
         >
+          <span>View Resume / CV</span>
+          <Icons name="external" size={14} />
+        </a>
+        <a href="/projects" class="cta-button secondary">
+          <span>View Projects</span>
+        </a>
+        <a href={`mailto:${person.email}`} class="cta-button secondary">
+          <span>Contact Mausam</span>
+        </a>
       </div>
     </article>
 
@@ -146,14 +213,15 @@ const description =
         <ul class="facts-list">
           <li><strong>Location:</strong> {person.place}</li>
           <li>
-            <strong>Education:</strong> B.Tech CSE, Central Univ. of Haryana
+            <strong>Education:</strong> B.Tech CSE (8.52 GPA), Central Univ. of Haryana
           </li>
           <li><strong>Role:</strong> Software Engineer</li>
-          <li><strong>WorldSkills:</strong> Cloud Computing (India)</li>
+          <li><strong>WorldSkills:</strong> Cloud Computing (Team India)</li>
           <li>
             <strong>Credentials:</strong>
             <a href={person.credly} target="_blank" rel="noopener noreferrer"
-              >Credly Verified</a>
+              >Credly Verified</a
+            >
           </li>
         </ul>
       </div>
@@ -161,16 +229,23 @@ const description =
       <div class="aside-nav-box">
         <p class="facts-label">Explore More</p>
         <ul class="facts-nav-links">
-          <li><a href="/resume">Detailed Resume</a></li>
+          <li>
+            <a href={person.resumeUrl} target="_blank" rel="noopener noreferrer">
+              Online Resume / CV &rarr;
+            </a>
+          </li>
+          <li><a href="/projects">Featured Projects</a></li>
+          <li><a href="/competition">Competition Journey</a></li>
           <li>
             <a href={person.blogs} target="_blank" rel="noopener noreferrer"
-              >Technical Blogs &rarr;</a>
+              >Technical Blogs &rarr;</a
+            >
           </li>
           <li>
             <a href={person.tools} target="_blank" rel="noopener noreferrer"
-              >Built Tools &rarr;</a>
+              >Built Tools &rarr;</a
+            >
           </li>
-          <li><a href="/competition">Competition Journey</a></li>
         </ul>
       </div>
     </aside>

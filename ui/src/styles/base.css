@@ -198,6 +198,17 @@ img {
   color: #fff;
 }
 
+.line-second {
+  display: flex;
+  align-items: baseline;
+  gap: 10%;
+}
+
+.accent-rank {
+  letter-spacing: 0.02em;
+  opacity: 0.1;
+}
+
 .accent {
   display: block;
   margin-top: 0.02em;
@@ -744,7 +755,7 @@ figcaption {
 
 @media (min-width: 600px) {
   .personal-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1474,10 +1485,38 @@ figcaption {
   border-bottom: 1px dashed var(--line);
 }
 
+.academic-timeline-entry {
+  background: rgba(243, 180, 192, 0.02);
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  border-radius: 0 6px 6px 0;
+}
+
 .experience-block:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+.exp-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.exp-location {
+  margin: 0.15rem 0 0.75rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
 }
 
 .experience-block h3 {
@@ -1493,7 +1532,7 @@ figcaption {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--accent);
-  margin: 0.2rem 0 0.75rem;
+  margin: 0.2rem 0 0.25rem;
 }
 
 .experience-block ul {

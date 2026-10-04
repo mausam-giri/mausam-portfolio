@@ -3,7 +3,7 @@ export const person = {
   shortName: "Mausam Giri",
   role: "Software Engineer",
   tagline: "I build systems that have to stay correct while someone is waiting. Cloud Computing-focused Software Engineer.",
-  place: "West Champaran and Delhi, India",
+  place: "New Delhi, India",
   email: "personal.mausamgiri@gmail.com",
   phone: "+91 8789120560",
   site: "https://mausamgiri.in",

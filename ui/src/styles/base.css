@@ -1,13 +1,15 @@
 :root {
   color-scheme: dark;
-  --ink: #f3f4f5;
-  --muted: #8b9198;
-  --line: #22262c;
-  --paper: #07080a;
-  --raised: #101216;
+  --ink: #f0f3f6;
+  --muted: #9aa1ad;
+  --line: #262c36;
+  --paper: #0c0e14;
+  --raised: #151922;
+  --raised-hover: #1b212d;
   --accent: #f3b4c0;
+  --accent-soft: rgba(243, 180, 192, 0.12);
   --teal: #f3b4c0;
-  --teal-deep: #1a1c20;
+  --teal-deep: #191e28;
   --sheet: #f4f5f6;
   --sheet-ink: #121416;
 }
@@ -18,11 +20,15 @@
 
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 90% 50% at 50% -10%, rgba(243, 180, 192, 0.05), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 15%, rgba(45, 60, 85, 0.12), transparent);
   color: var(--ink);
   font-family: Barlow, "Segoe UI", sans-serif;
   font-size: 1.02rem;
   line-height: 1.55;
+  min-height: 100vh;
 }
 
 a {
@@ -110,7 +116,7 @@ img {
   height: min(78vh, 680px);
   min-height: 420px;
   overflow: hidden;
-  background: #050505;
+  background: var(--paper);
   margin-bottom: 2vw;
 }
 
@@ -125,19 +131,19 @@ img {
 }
 
 .hero-sharp {
-  filter: grayscale(1) contrast(1.08) brightness(0.78);
+  filter: grayscale(1) contrast(1.04) brightness(0.92);
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent 0%,
-    #000 34%,
-    #000 78%,
+    #000 24%,
+    #000 82%,
     transparent 100%
   );
   mask-image: linear-gradient(
     90deg,
     transparent 0%,
-    #000 34%,
-    #000 78%,
+    #000 24%,
+    #000 82%,
     transparent 100%
   );
 }
@@ -155,17 +161,17 @@ img {
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.72) 0%,
-      rgba(0, 0, 0, 0.28) 42%,
-      rgba(0, 0, 0, 0.08) 68%,
-      rgba(0, 0, 0, 0.45) 100%
+      rgba(12, 14, 20, 0.8) 0%,
+      rgba(12, 14, 20, 0.35) 42%,
+      rgba(12, 14, 20, 0.1) 68%,
+      rgba(12, 14, 20, 0.5) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.28) 0%,
+      rgba(12, 14, 20, 0.25) 0%,
       transparent 28%,
-      transparent 62%,
-      #050505 100%
+      transparent 60%,
+      var(--paper) 100%
     );
 }
 
@@ -248,7 +254,9 @@ img {
   height: 3.1rem;
   padding: 0 max(1.25rem, calc(50vw - 560px));
   align-items: center;
-  background: #050505;
+  background: rgba(18, 22, 30, 0.88);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
   color: #9aa0a6;
   font-family: "Barlow Condensed", Impact, sans-serif;
   font-size: 0.95rem;
@@ -708,20 +716,20 @@ figcaption {
    ========================================================================== */
 
 .card-wrapper {
-  background: var(--raised, #101216);
-  border: 1px solid var(--line, #22262c);
+  background: var(--raised, #151922);
+  border: 1px solid var(--line, #262c36);
   border-radius: 12px;
   padding: 1.6rem 1.75rem;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
 .card-wrapper:hover {
-  border-color: rgba(243, 180, 192, 0.25);
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+  border-color: rgba(243, 180, 192, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
 }
 
 .card-header {
@@ -1247,11 +1255,11 @@ figcaption {
    ========================================================================== */
 
 .aside-card {
-  background: var(--raised, #101216);
-  border: 1px solid var(--line, #22262c);
+  background: var(--raised, #151922);
+  border: 1px solid var(--line, #262c36);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
 .aside-header {
@@ -1799,5 +1807,163 @@ figcaption {
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   COMPETITION PAGE STYLES
+   ========================================================================== */
+
+.competition-layout {
+  padding: 2.5rem 0 5rem;
+}
+
+.competition-photo-frame {
+  margin: 1.75rem 0 2.25rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--raised);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.competition-photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.competition-photo-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.25);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.competition-photo-caption strong {
+  color: var(--ink);
+}
+
+.competition-timeline-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.competition-card {
+  padding: 1.5rem 1.65rem;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.competition-card:hover {
+  border-color: rgba(243, 180, 192, 0.35);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.competition-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.competition-card-title {
+  margin: 0.25rem 0 0;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.competition-medal-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.medal-gold {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.medal-bronze {
+  background: rgba(249, 115, 22, 0.12);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.35);
+}
+
+.medal-champ {
+  background: rgba(243, 180, 192, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(243, 180, 192, 0.35);
+}
+
+.competition-card-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.competition-card-desc {
+  margin: 0 0 0.85rem;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #c5d0d8;
+}
+
+.competition-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--line);
+}
+
+.competition-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.competition-source-link:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.competition-sub-notes {
+  font-size: 0.8rem;
   color: var(--muted);
 }

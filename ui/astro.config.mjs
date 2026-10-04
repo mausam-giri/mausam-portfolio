@@ -7,4 +7,5 @@ export default defineConfig({
   site: 'https://mausamgiri.in',
   trailingSlash: 'never',
   integrations: [react()],
+  output: "static"
 });

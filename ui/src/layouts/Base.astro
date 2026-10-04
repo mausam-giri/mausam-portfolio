@@ -33,7 +33,7 @@ function current(href: string) {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={person.name} />
-    <meta name="theme-color" content="#07080a" />
+    <meta name="theme-color" content="#0c0e14" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,5 +89,35 @@ function current(href: string) {
       <a href={person.blogs}>Blogs</a>
       <a href={person.tools}>Tools</a>
     </footer>
+
+    <script is:inline>
+      (function () {
+        if (typeof window === "undefined") return;
+        window.addEventListener("load", function () {
+          try {
+            const data = {
+              path: window.location.pathname,
+              referrer: document.referrer || "",
+              timezone: (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : "",
+              screen: window.screen ? `${window.screen.width}x${window.screen.height}` : "",
+            };
+            const payload = JSON.stringify(data);
+            const endpoint = "/api/visit";
+
+            if (navigator.sendBeacon) {
+              const blob = new Blob([payload], { type: "application/json" });
+              navigator.sendBeacon(endpoint, blob);
+            } else {
+              fetch(endpoint, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: payload,
+                keepalive: true,
+              }).catch(function () {});
+            }
+          } catch (e) {}
+        });
+      })();
+    </script>
   </body>
 </html>

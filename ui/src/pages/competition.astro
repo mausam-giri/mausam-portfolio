@@ -1,56 +1,278 @@
 ---
 import Base from "../layouts/Base.astro";
+import { person } from "../data/site";
+import Icons from "../components/Icons.astro";
 
-const title = "Competition — Mausam Kumar Giri";
+const title = "Competitive Journey — Mausam Kumar Giri";
 const description =
-  "Mausam Kumar Giri in skill competitions: IndiaSkills web technologies bronze, IndiaSkills cloud computing gold, gold in Wollongong, and cloud computing for India at WorldSkills Shanghai 2026.";
+  "WorldSkills Shanghai 2026 Champion, Global Skills Challenge Gold Medalist, and IndiaSkills Gold in AWS Cloud Computing. The competitive journey of Mausam Kumar Giri representing Team India.";
+
+const competitions = [
+  {
+    title: "WorldSkills Shanghai 2026",
+    role: "Cloud Computing · Team India",
+    date: "September 23–26, 2026",
+    location: "Shanghai, China",
+    medal: "WorldSkills Champion",
+    medalClass: "medal-champ",
+    icon: "award",
+    summary:
+      "Represented India on the highest international stage in AWS Cloud Computing. Under tight time constraints and strict grading criteria, designed multi-region architectures, automated container deployments (EKS/ECS), established zero-trust IAM boundaries, and conducted real-time disaster recovery.",
+    details:
+      "The competition floor in Shanghai brings together the world's elite champions across 60+ skills. Competed under intense pressure over 4 gruelling days.",
+    sourceName: "WorldSkills International",
+    sourceUrl: "https://worldskills2026.com/skills/cloud-computing/",
+    verifiedBadge: true,
+  },
+  {
+    title: "Global Skills Challenge Australia",
+    role: "Cloud Computing · International Invitational",
+    date: "June 23–29, 2026",
+    location: "Wollongong, NSW, Australia",
+    medal: "Gold Medal",
+    medalClass: "medal-gold",
+    icon: "award",
+    summary:
+      "The official international rehearsal for WorldSkills, bringing together 16 competing nations using the official WorldSkills scoring engine. Finished #1 globally to secure the Gold Medal for India, ahead of silver-medalist Japan and bronze-medalist Singapore.",
+    details:
+      "Tested end-to-end cloud infrastructure speed, live break-fix troubleshooting, and high-availability network automation.",
+    sourceName: "DD News Official Coverage",
+    sourceUrl:
+      "https://ddnews.gov.in/en/team-india-wins-5-medals-at-global-skills-challenge-australia-2026-strengthens-worldskills-shanghai-preparations/",
+    verifiedBadge: false,
+  },
+  {
+    title: "IndiaSkills National Competition 2026",
+    role: "AWS Cloud Computing · Nationals",
+    date: "May 2026",
+    location: "New Delhi, India",
+    medal: "Gold Medal (#1 in India)",
+    medalClass: "medal-gold",
+    icon: "award",
+    summary:
+      "Ranked #1 nationwide across all state champions in AWS Cloud Computing to earn the sole honor of representing Team India at WorldSkills Shanghai. Mastered complex VPC Peering, Transit Gateways, serverless orchestration, and automated infrastructure as code.",
+    details:
+      "Supported by Bihar Skill Development Mission (BSDM), ETHNUS, and national technical experts throughout rigorous multi-phase preparation camps.",
+    sourceName: "Bihar Skill Development Mission",
+    sourceUrl:
+      "https://staging-skillmissionbihar.mkcl.org/world-skill/india-skill-competition-2024/timeline",
+    verifiedBadge: false,
+  },
+  {
+    title: "IndiaSkills National Competition 2024",
+    role: "Web Technologies · Nationals",
+    date: "May 2024",
+    location: "New Delhi, India",
+    medal: "Bronze Medal",
+    medalClass: "medal-bronze",
+    icon: "award",
+    summary:
+      "Bronze Medalist representing Bihar in Web Technologies. Delivered client-side architectures, strict design implementations, and rapid algorithmic problem-solving under national competitive clocks.",
+    details:
+      "This pivotal national podium finish sparked the ambition to scale from application layers into distributed cloud systems and global infrastructure mastery.",
+    sourceName: "IndiaSkills Archive",
+    sourceUrl:
+      "https://staging-skillmissionbihar.mkcl.org/world-skill/india-skill-competition-2024/timeline",
+    verifiedBadge: false,
+  },
+];
 ---
 
 <Base title={title} description={description}>
-  <article class="page">
-    <p class="kicker">West Champaran · 2024 – 2026</p>
-    <h1>Competition</h1>
-    <p class="lead">
-      Two skills. First the screen. Then a cloud built against a clock. Shanghai is the world floor. The medal that year was won earlier, in Wollongong.
-    </p>
+  <div class="layout competition-layout">
+    <article class="page-article">
+      <!-- Header -->
+      <div class="page-header-block">
+        <p class="kicker">Team India · 2024 – 2026</p>
+        <h1 class="page-title">Skill Competitions</h1>
+        <p class="role-lead">
+          From state-level web engineering to representing Team India on the world stage in AWS Cloud Computing: architecting, securing, and automating distributed systems under the clock.
+        </p>
+      </div>
 
-    <figure>
-      <img
-        src="/worldskills_mausamgiri_3.jpg"
-        alt="Mausam Kumar Giri at the India station, WorldSkills Shanghai 2026"
-        width="1600"
-        height="1200"
-      />
-      <figcaption>Shanghai, September 2026.</figcaption>
-    </figure>
+      <!-- Featured Competition Arena Photo -->
+      <div class="competition-photo-frame">
+        <img
+          src="/worldskills_mausamgiri_3.jpg"
+          alt="Mausam Kumar Giri representing Team India in Cloud Computing at WorldSkills"
+          width="1600"
+          height="1000"
+          loading="eager"
+        />
+        <div class="competition-photo-caption">
+          <span>
+            <strong>WorldSkills Shanghai Arena</strong> — The international competition workstation.
+          </span>
+          <span class="hero-nation" style="margin: 0; font-size: 0.72rem;">
+            <img src="/flag_of_india.svg" alt="India" width="18" height="12" style="border-radius: 2px;" />
+            Team India
+          </span>
+        </div>
+      </div>
 
-    <h2>IndiaSkills 2024 · Web technologies · Bronze</h2>
-    <p>
-      West Champaran, for Bihar. The Bihar Skill Development Mission lists the bronze. That week was structure and speed on a page. It is not the skill I took to Shanghai.
-    </p>
-    <p class="sources">
-      <a href="https://staging-skillmissionbihar.mkcl.org/world-skill/india-skill-competition-2024/timeline">Bihar Skill Development Mission</a>
-    </p>
+      <!-- WorldSkills Champion Showcase Box -->
+      <div class="about-highlight-box">
+        <div class="highlight-badge-col">
+          <img
+            src="/champion-badge.png"
+            alt="WorldSkills Champion Badge"
+            class="about-badge-img"
+            width="90"
+            height="90"
+          />
+        </div>
+        <div>
+          <h3>WorldSkills Shanghai 2026 — Champion</h3>
+          <p>
+            Demonstrated world-class proficiency in multi-region cloud topology design, automated recovery pipelines, and zero-loss network operations. Formally recognized and credentialed on Credly.
+          </p>
+          <a
+            href={person.credly}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="verified-tag"
+            style="display: inline-flex; margin-top: 0.35rem;"
+          >
+            <Icons name="award" size={13} />
+            <span>View Verified Credly Credential &rarr;</span>
+          </a>
+        </div>
+      </div>
 
-    <h2>IndiaSkills 2026 · Cloud computing · Gold</h2>
-    <p>
-      I changed skill. Networks, identity, automation, and recovery, graded under a clock. National gold. The people around that result include Bihar Skill Development Mission, ETHNUS, and the expert group.
-    </p>
+      <!-- Competition Timeline Cards -->
+      <section class="about-section">
+        <h2>Competition Chronicle</h2>
+        <div class="competition-timeline-grid">
+          {
+            competitions.map((item) => (
+              <div class="competition-card">
+                <div class="competition-card-header">
+                  <div>
+                    <span class="card-tag">{item.role}</span>
+                    <h3 class="competition-card-title">{item.title}</h3>
+                  </div>
+                  <span class={`competition-medal-pill ${item.medalClass}`}>
+                    <Icons name="award" size={13} />
+                    <span>{item.medal}</span>
+                  </span>
+                </div>
 
-    <h2>Wollongong · June 2026 · Gold</h2>
-    <p>
-      The Global Skills Challenge, 23–29 June 2026, was a rehearsal of WorldSkills: sixteen countries, the same scoring system. DD News records the cloud result. Gold, Mausam Kumar Giri, Bihar. Silver, Japan. Bronze, Singapore.
-    </p>
-    <p class="sources">
-      <a href="https://ddnews.gov.in/en/team-india-wins-5-medals-at-global-skills-challenge-australia-2026-strengthens-worldskills-shanghai-preparations/">DD News</a>
-    </p>
+                <div class="competition-card-meta">
+                  <span>{item.location}</span> · <span>{item.date}</span>
+                </div>
 
-    <h2>WorldSkills Shanghai 2026 · Cloud computing · India</h2>
-    <p>
-      23–26 September 2026. I was India’s competitor in cloud computing. The medals in the skill went to China, Korea, and Singapore. This is the fact of representing India.
-    </p>
-    <p class="sources">
-      <a href="https://worldskills2026.com/skills/cloud-computing/">WorldSkills Shanghai, cloud computing</a>
-    </p>
-  </article>
+                <p class="competition-card-desc">{item.summary}</p>
+                <p class="competition-card-desc" style="font-size: 0.88rem; color: var(--muted); margin-bottom: 0.75rem;">
+                  {item.details}
+                </p>
+
+                <div class="competition-card-footer">
+                  <span class="competition-sub-notes">Verified Competitor Record</span>
+                  {item.sourceUrl && (
+                    <a
+                      href={item.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="competition-source-link"
+                    >
+                      <span>{item.sourceName}</span>
+                      <Icons name="external" size={12} />
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- Technical Domains Tested Under Clock -->
+      <section class="about-section">
+        <h2>Competition Disciplines & Core Tasks</h2>
+        <p>
+          Every module at WorldSkills tests engineering rigor under strict, real-time stopwatch conditions:
+        </p>
+        <div class="tech-pills-wrap">
+          <span class="tech-pill">Multi-Region VPC & Transit Gateways</span>
+          <span class="tech-pill">Amazon EKS & Kubernetes Deployments</span>
+          <span class="tech-pill">Serverless & DynamoDB Single-Table</span>
+          <span class="tech-pill">IAM Least-Privilege & KMS Envelope Encryption</span>
+          <span class="tech-pill">Traffic Inspection & Network Firewalls</span>
+          <span class="tech-pill">Automated Terraform & CloudFormation</span>
+          <span class="tech-pill">Live Incident Troubleshooting & Recovery</span>
+        </div>
+      </section>
+
+      <!-- Bottom Footer Navigation Actions -->
+      <div class="page-footer-actions">
+        <a href="/projects" class="cta-button">
+          <span>View Featured Projects</span>
+          <Icons name="external" size={13} />
+        </a>
+        <a href="/about" class="cta-button secondary">
+          <span>About Mausam</span>
+        </a>
+        <a href={`mailto:${person.email}`} class="cta-button secondary">
+          <span>Contact</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Sidebar Aside -->
+    <aside class="facts">
+      <div class="aside-profile-card">
+        <p class="facts-label">Medal Tally</p>
+        <ul class="facts-list">
+          <li><strong>WorldSkills:</strong> Champion (2026)</li>
+          <li><strong>Australia:</strong> Gold Medal (2026)</li>
+          <li><strong>IndiaSkills '26:</strong> Gold Medal (Cloud)</li>
+          <li><strong>IndiaSkills '24:</strong> Bronze (Web Tech)</li>
+          <li><strong>Skill:</strong> Cloud Computing</li>
+        </ul>
+      </div>
+
+      <div class="aside-nav-box">
+        <p class="facts-label">Official Credentials</p>
+        <ul class="facts-nav-links">
+          <li>
+            <a href={person.credly} target="_blank" rel="noopener noreferrer">
+              Credly Verified Badge &rarr;
+            </a>
+          </li>
+          <li>
+            <a href={person.aws} target="_blank" rel="noopener noreferrer">
+              AWS Skills Profile &rarr;
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://ddnews.gov.in/en/team-india-wins-5-medals-at-global-skills-challenge-australia-2026-strengthens-worldskills-shanghai-preparations/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DD News Official Broadcast &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside-nav-box">
+        <p class="facts-label">Navigation</p>
+        <ul class="facts-nav-links">
+          <li><a href="/about">About & Academic Background</a></li>
+          <li><a href="/projects">Featured Projects</a></li>
+          <li>
+            <a href={person.blogs} target="_blank" rel="noopener noreferrer">
+              Technical Blogs &rarr;
+            </a>
+          </li>
+          <li>
+            <a href={person.tools} target="_blank" rel="noopener noreferrer">
+              Built Tools &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
 </Base>

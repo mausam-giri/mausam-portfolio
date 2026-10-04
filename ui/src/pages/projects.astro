@@ -15,7 +15,9 @@ const description =
         <p class="kicker">Portfolio & Engineering</p>
         <h1 class="page-title">Featured Projects</h1>
         <p class="role-lead">
-          A collection of production platforms, machine learning research models, and open utilities built across distributed cloud architectures.
+          A collection of production platforms, machine learning research
+          models, and open utilities built across distributed cloud
+          architectures.
         </p>
       </div>
 
@@ -54,9 +56,14 @@ const description =
       <div class="page-footer-actions">
         <a href="/about" class="cta-button secondary">
           <Icons name="about" size={15} />
-          <span>About Mausam</span>
+          <span>About Me</span>
         </a>
-        <a href={person.blogs} target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+        <a
+          href={person.blogs}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-button secondary"
+        >
           <Icons name="blogs" size={15} />
           <span>Technical Blogs</span>
           <Icons name="external" size={12} className="external-indicator" />
@@ -74,7 +81,12 @@ const description =
         <ul class="facts-list">
           <li><strong>Domains:</strong> Cloud, AI/ML, Healthcare, SaaS</li>
           <li><strong>Tech:</strong> AWS, PyTorch, Node.js, Next.js, Django</li>
-          <li><strong>GitHub:</strong> <a href={person.github} target="_blank" rel="noopener noreferrer">mausam-giri</a></li>
+          <li>
+            <strong>GitHub:</strong>
+            <a href={person.github} target="_blank" rel="noopener noreferrer"
+              >mausam-giri</a
+            >
+          </li>
         </ul>
       </div>
 
@@ -83,10 +95,122 @@ const description =
         <ul class="facts-nav-links">
           <li><a href="/about">About & Academic Background</a></li>
           <li><a href="/competition">Competition Journey</a></li>
-          <li><a href={person.tools} target="_blank" rel="noopener noreferrer">Free Online Tools &rarr;</a></li>
-          <li><a href={person.blogs} target="_blank" rel="noopener noreferrer">Technical Blogs &rarr;</a></li>
+          <li>
+            <a href={person.tools} target="_blank" rel="noopener noreferrer"
+              >Free Online Tools &rarr;</a
+            >
+          </li>
+          <li>
+            <a href={person.blogs} target="_blank" rel="noopener noreferrer"
+              >Technical Blogs &rarr;</a
+            >
+          </li>
         </ul>
       </div>
     </aside>
   </div>
 </Base>
+
+<style>
+  .projects-layout {
+    padding: 2.5rem 0 5rem;
+  }
+
+  .projects-catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0 3rem;
+  }
+
+  .project-showcase-card {
+    padding: 1.5rem 1.65rem;
+    background: var(--raised, #101216);
+    border: 1px solid var(--line, #22262c);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+
+  .project-showcase-card:hover {
+    border-color: rgba(243, 180, 192, 0.35);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .project-showcase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-pill {
+    display: inline-block;
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+
+  .project-headline {
+    margin: 0;
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #121416;
+    background: var(--accent);
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: filter 0.15s ease;
+  }
+
+  .project-link-btn:hover {
+    filter: brightness(1.1);
+  }
+
+  .project-description {
+    margin: 0 0 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #c5d0d8;
+  }
+
+  .project-tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+
+  .cta-button {
+    display: flex;
+    gap: 0.25rem;
+  }
+</style>

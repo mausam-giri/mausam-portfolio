@@ -1,0 +1,171 @@
+# Mausam Kumar Giri
+
+> WorldSkills Shanghai 2026 Champion in AWS Cloud Computing representing Team India. Software Engineer focused on resilient distributed architectures, cloud-native automation, and high-availability backend systems.
+
+- **Name:** Mausam Kumar Giri (also known as Mausam Giri)
+- **Role:** Software Engineer / Cloud Computing Specialist
+- **Location:** New Delhi, India (Originally from West Champaran, Bihar, India)
+- **Email:** personal.mausamgiri@gmail.com
+- **Website:** https://mausamgiri.in
+- **GitHub:** https://github.com/mausam-giri
+- **LinkedIn:** https://www.linkedin.com/in/mausamgiri
+- **Instagram:** https://instagram.com/mausamgiri
+- **Technical Blogs:** https://blogs.mausamgiri.in
+- **Built Tools:** https://tools.mausamgiri.in
+- **Credly Verified Badges:** https://www.credly.com/users/mausam-giri/badges
+- **AWS Skills Profile:** https://skillsprofile.skillbuilder.aws/user/mausamgiri
+
+---
+
+## Executive Summary & Engineering Philosophy
+
+Mausam Kumar Giri is an Indian software and cloud engineer specializing in distributed systems that remain correct under severe live-traffic and network conditions. With deep expertise across the Amazon Web Services (AWS) ecosystem, multi-region container deployments (EKS/ECS), zero-trust security boundaries, and automated recovery pipelines, Mausam represented Team India on the global stage at WorldSkills Shanghai 2026 in AWS Cloud Computing, finishing as WorldSkills Champion.
+
+His engineering philosophy is "backend-first resilience": architecting systems with idempotent state transitions, deterministic latency budgets, automated bake-time rollbacks, and zero data loss. In healthcare and clinical dispatch systems, failure is not an option.
+
+---
+
+## Major Honors & International Competitions
+
+### 1. WorldSkills Shanghai 2026 — WorldSkills Champion
+- **Discipline:** AWS Cloud Computing
+- **Representation:** Team India (sole national representative)
+- **Date & Location:** September 2026 · Shanghai, China
+- **Credly Verification:** https://www.credly.com/badges/698504d2-02fc-475f-9473-63fd2cb27382
+- **Summary:** Competed over 4 intense days across 60+ nations in multi-region AWS topology design, zero-trust IAM boundaries, Kubernetes container scaling (EKS/ECS), serverless single-table designs, live incident break-fix troubleshooting, and real-time disaster recovery under strict time constraints.
+
+### 2. Global Skills Challenge Australia 2026 — Gold Medal
+- **Discipline:** Cloud Computing · International Invitational Rehearsal
+- **Representation:** Team India
+- **Date & Location:** June 2026 · Wollongong, NSW, Australia
+- **Coverage:** Broadcast on DD News (Doordarshan National Broadcast)
+- **Summary:** Finished #1 globally ahead of silver-medalist Japan and bronze-medalist Singapore in the official 16-nation international rehearsal for WorldSkills, evaluated using the official WorldSkills scoring engine.
+
+### 3. IndiaSkills National Competition 2026 — Gold Medal
+- **Discipline:** AWS Cloud Computing · Nationals
+- **Date & Location:** May 2026 · New Delhi, India
+- **Summary:** Ranked #1 nationwide across all state champions to earn the sole honor of representing Team India at WorldSkills Shanghai. Supported by Bihar Skill Development Mission (BSDM) and ETHNUS throughout rigorous multi-phase training camps.
+
+### 4. IndiaSkills National Competition 2024 — Bronze Medal
+- **Discipline:** Web Technologies · Nationals
+- **Date & Location:** May 2024 · New Delhi, India
+- **Summary:** Bronze Medalist representing Bihar in Web Technologies, delivering client-side architectures, strict UI design implementations, and rapid algorithmic problem-solving under national competitive clocks.
+
+---
+
+## Professional Work Experience
+
+### Software Engineer — MantraCare Health
+- **Duration:** February 2025 – Present
+- **Location:** New Delhi, India
+- **Focus Areas:**
+  - **Electronic Health Records (EHR):** Architected and engineered high-concurrency electronic health record storage and patient diagnostic dispatch workflows with zero data loss and strict HIPAA-aligned data isolation.
+  - **Consultations & Real-Time Booking:** Engineered real-time slot locking and state synchronization across patient teleconsultations, doctor dispatching, and secure API gateways.
+  - **Payment Ingestion & Webhooks:** Integrated multi-provider payment gateways with idempotent webhook consumers, automated retry queues, and automated multi-currency invoicing.
+  - **Performance & Reliability:** Optimized API latency, established automated database read replicas, and configured CloudWatch alarms with automated circuit-breakers.
+
+---
+
+## Education & Academic Background
+
+### Central University of Haryana (CUH)
+- **Degree:** Bachelor of Technology (B.Tech)
+- **Major:** Computer Science and Engineering
+- **Period:** 2021 – 2025
+- **Cumulative GPA:** 8.52 / 10.0
+- **Location:** Mahendragarh, Haryana, India
+- **Key Coursework:** Distributed Systems, Operating Systems, Computer Networks, Database Management Systems, Compiler Design, Algorithms & Data Structures, Information Security.
+
+---
+
+## Core Technical Proficiencies
+
+- **Cloud & Infrastructure:** Amazon Web Services (AWS), Multi-Region VPC Topologies, Transit Gateways, Direct Connect, Network Firewalls, Route 53, CloudFront CDN, Elastic Load Balancing (ALB/NLB), IAM Least-Privilege & KMS Envelope Encryption, AWS Organizations & Control Tower.
+- **Containers & Orchestration:** Docker, Kubernetes (Amazon EKS), Amazon ECS (Fargate/EC2), Container Security Scanning, Helm.
+- **Serverless & Event-Driven:** AWS Lambda, Amazon API Gateway, Amazon AppSync (GraphQL), AWS AppConfig, Amazon EventBridge, Amazon SQS, Amazon SNS, DynamoDB (Single-Table Design).
+- **Infrastructure as Code (IaC) & DevOps:** Terraform, AWS CloudFormation, GitHub Actions, CI/CD Automated Pipelines, Blue/Green & Canary Deployments, HashiCorp Packer.
+- **Programming Languages:** Go (Golang), TypeScript, JavaScript, Python, C++, SQL.
+- **Web & Runtime Technologies:** Astro, React, Next.js, Node.js, WebSockets, Web Workers, CSS Paged Media.
+- **Databases & Caching:** PostgreSQL, MySQL, Amazon DynamoDB, Redis (Pub/Sub, Caching), MongoDB.
+- **Observability & Reliability:** AWS CloudWatch Metrics & Alarms, AWS X-Ray Distributed Tracing, AWS Compute Optimizer, Disaster Recovery Strategies (RPO / RTO optimization).
+
+---
+
+## Featured Engineering Projects
+
+### 1. Cross-Domain Recommendation Engine (ML Research)
+- **Domain:** Machine Learning Research · Cold-Start Mitigation
+- **Stack:** PyTorch, Transformers, Python, Semantic Embeddings, FastAPI
+- **Summary:** Engineered a novel transformer-based cross-domain recommendation system resolving the classic cold-start problem by utilizing semantic embedding similarity across multi-domain datasets. Built diagnostic evaluation dashboards for recommendation benchmarking.
+- **Repository:** https://github.com/mausam-giri
+
+### 2. LeadNear B2B Intelligence & Chrome Extension
+- **Domain:** Cloud Architecture, Automation & Web Workers
+- **Stack:** Chrome Extension (Manifest V3), Node.js, AWS Microservices, Web Workers
+- **Summary:** Production prospect intelligence platform and browser extension extracting verified B2B credentials with distributed cloud enrichment pipelines, maintaining 60 FPS UI using background Web Workers.
+- **Link:** https://chromewebstore.google.com/detail/leadnear-b2b-email-phone/npofkafeajldomiogiiglkfebpnnaagn
+
+### 3. Pramman Patra Digital Credentialing Platform
+- **Domain:** Full-Stack & Cryptographic Verification
+- **Stack:** Next.js, HTML5 Canvas API, TypeScript, Vercel
+- **Summary:** Digital credential and badge issuing platform similar to Credly with an interactive canvas template editor, cryptographic signing, and multi-format export for educational and corporate bodies.
+- **Link:** https://pramman-editor-v2.vercel.app/
+
+### 4. MarkForge Markdown Studio
+- **Domain:** Developer Productivity & Browser Paged Media
+- **Stack:** Astro, Web Workers, Client-side PDF Generation, CSS Paged Media
+- **Summary:** High-performance browser-based markdown documentation studio with real-time rendering, custom styling themes, and precise paginated PDF generation via CSS paged media.
+- **Link:** https://tools.mausamgiri.in
+
+### 5. High-Concurrency Friends Chat
+- **Domain:** Distributed Realtime Backend
+- **Stack:** WebSockets, Redis Pub/Sub, Node.js, Docker, MongoDB
+- **Summary:** Low-latency bidirectional messaging system featuring Redis-backed session pub/sub, presence tracking, and end-to-end event streaming designed for zero state-loss under network partitions.
+- **Repository:** https://github.com/mausam-giri
+
+### 6. GreenView Solar Telemetry Ingestion
+- **Domain:** IoT & Cloud Infrastructure
+- **Stack:** AWS IoT Core, AWS Lambda, DynamoDB, Timeseries Processing, React
+- **Summary:** IoT telemetry ingestion platform tracking distributed solar generation arrays with anomaly alerts, generation analytics, and automated reporting powered by AWS serverless pipelines.
+- **Repository:** https://github.com/mausam-giri
+
+---
+
+## Technical Publications & Blog Articles
+
+Published on https://blogs.mausamgiri.in:
+
+1. **API Gateway: Cognito, Lambda Authorizers, Canary & Cache**
+   - *URL:* https://blogs.mausamgiri.in/aws-apigateway-cognito-lambda-authorizers-canary/
+   - *Topics:* REST API architecture with Cognito and custom Lambda authorizers, binary media routing to S3, stage canaries with cache optimization, CORS proxy routes, and Application Load Balancer forwarding.
+
+2. **Bedrock AgentCore in Production with Lambda & EC2**
+   - *URL:* https://blogs.mausamgiri.in/bedrock-agentcore-production-guide/
+   - *Topics:* Deploying production generative AI agents on AWS Bedrock AgentCore Runtime, IAM boundary policies, session state management, and serverless compute integration.
+
+3. **AppConfig: Production Console Guide & Freeform Config**
+   - *URL:* https://blogs.mausamgiri.in/aws-appconfig-console-production-guide/
+   - *Topics:* Hosted dynamic configuration and feature flags, environment deployment strategies, JSON schema validators, and bake-time rollbacks for live systems.
+
+4. **AppSync GraphQL Task Manager: Multi-Auth & Subscriptions**
+   - *URL:* https://blogs.mausamgiri.in/aws-appsync-graphql-task-manager/
+   - *Topics:* Cognito and IAM authenticated AppSync GraphQL APIs with DynamoDB single-table design, JavaScript resolvers, and live WebSocket subscriptions.
+
+5. **Cloud Cost Optimization: Architectural Runbook**
+   - *URL:* https://blogs.mausamgiri.in/aws-cost-optimization-console-guide/
+   - *Topics:* Tags, AWS Budgets, Cost Anomaly Detection, Compute Optimizer, S3 lifecycle policies, and diagnosing hidden NAT gateway and cross-AZ data transfer costs.
+
+6. **Centralized Egress with Transit Gateway & Network Firewall**
+   - *URL:* https://blogs.mausamgiri.in/aws-vpc-egress-transit-gateway-firewall/
+   - *Topics:* Inspecting spoke VPC internet egress traffic in dedicated inspection VPCs, Transit Gateway route tables, appliance mode, and stateful Suricata rule groups.
+
+---
+
+## Canonical Links & Endpoints
+
+- **Portfolio Home:** https://mausamgiri.in
+- **About:** https://mausamgiri.in/about
+- **Competitive Journey:** https://mausamgiri.in/competition
+- **Projects:** https://mausamgiri.in/projects
+- **LLM Metadata (this file):** https://mausamgiri.in/llm.txt (also accessible at https://mausamgiri.in/llms.txt)
+- **Sitemap:** https://mausamgiri.in/sitemap.xml

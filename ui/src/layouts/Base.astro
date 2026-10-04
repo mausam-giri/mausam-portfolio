@@ -25,6 +25,67 @@ const nav = [
 function current(href: string) {
   return path === href || path.startsWith(`${href}/`);
 }
+
+const siteUrl = Astro.site
+  ? Astro.site.toString().replace(/\/$/, "")
+  : "https://mausamgiri.in";
+const ogImageUrl = new URL("/mausam_giri.png", siteUrl).toString();
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: person.name,
+      alternateName: [person.shortName, "Mausam Giri"],
+      jobTitle: "Cloud Computing & Software Engineer",
+      description:
+        "WorldSkills Shanghai 2026 Champion in AWS Cloud Computing representing Team India. Software engineer specialized in resilient distributed systems and healthcare infrastructure.",
+      url: siteUrl,
+      image: ogImageUrl,
+      sameAs: [
+        person.github,
+        person.linkedin,
+        person.instagram,
+        person.credlyProfile,
+        person.aws,
+        person.blogs,
+        person.tools,
+      ],
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Central University of Haryana",
+      },
+      award: [
+        "WorldSkills Shanghai 2026 Champion (AWS Cloud Computing)",
+        "Global Skills Challenge Australia 2026 Gold Medalist",
+        "IndiaSkills 2026 National Gold Medalist (AWS Cloud Computing)",
+        "IndiaSkills 2024 National Bronze Medalist (Web Technologies)",
+      ],
+      knowsAbout: [
+        "Amazon Web Services (AWS)",
+        "Cloud Computing Architecture",
+        "Multi-Region Topologies",
+        "Kubernetes & Amazon EKS",
+        "Infrastructure as Code (Terraform, CloudFormation)",
+        "Golang",
+        "Distributed Systems & High Availability",
+        "Electronic Health Records (EHR)",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Mausam Kumar Giri",
+      description: description,
+      publisher: {
+        "@id": `${siteUrl}/#person`,
+      },
+    },
+  ],
+});
 ---
 
 <!doctype html>
@@ -37,18 +98,59 @@ function current(href: string) {
     <meta name="author" content={person.name} />
     <meta name="theme-color" content="#0c0e14" />
     <link rel="canonical" href={canonical} />
+    <link
+      rel="alternate"
+      type="text/markdown"
+      href="/llms.txt"
+      title="LLM Context (llms.txt)"
+    />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llm.txt"
+      title="LLM Context (llm.txt)"
+    />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/mausam_giri.ico" />
     <link rel="shortcut icon" href="/mausamgiri.ico" />
+
+    <!-- Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- OpenGraph Tags -->
+    <meta property="og:site_name" content="Mausam Kumar Giri" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1250" />
+    <meta
+      property="og:image:alt"
+      content="Mausam Kumar Giri - WorldSkills Champion & Cloud Computing Engineer"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json" is:inline set:html={schemaJson} />
   </head>
   <body>
     <header

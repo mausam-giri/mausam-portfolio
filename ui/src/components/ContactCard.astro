@@ -19,7 +19,9 @@ import Icons from "./Icons.astro";
         <a
           href={social.href}
           target={social.href.startsWith("mailto") ? undefined : "_blank"}
-          rel={social.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+          rel={
+            social.href.startsWith("mailto") ? undefined : "noopener noreferrer"
+          }
           class="contact-link-row"
         >
           <span class="contact-icon-box">
@@ -47,3 +49,10 @@ import Icons from "./Icons.astro";
     </a>
   </div>
 </div>
+
+<style>
+  .location-banner {
+    display: flex;
+    justify-content: center;
+  }
+</style>

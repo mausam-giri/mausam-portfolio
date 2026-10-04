@@ -18,7 +18,7 @@ const description =
           Software engineer focused on scalable cloud architecture, healthcare
           systems, and high-availability backend infrastructure.
         </p>
-        <div class="about-hero-actions">
+        <!-- <div class="about-hero-actions">
           <a
             href={person.resumeUrl}
             target="_blank"
@@ -31,7 +31,7 @@ const description =
           <a href={`mailto:${person.email}`} class="cta-button secondary">
             <span>Email Mausam</span>
           </a>
-        </div>
+        </div> -->
       </div>
 
       <section class="about-section">
@@ -205,7 +205,7 @@ const description =
       </section>
 
       <div class="page-footer-actions">
-        <a
+        <!-- <a
           href={person.resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -213,12 +213,12 @@ const description =
         >
           <span>View Resume / CV</span>
           <Icons name="external" size={14} />
-        </a>
+        </a> -->
         <a href="/projects" class="cta-button secondary">
           <span>View Projects</span>
         </a>
         <a href={`mailto:${person.email}`} class="cta-button secondary">
-          <span>Contact Mausam</span>
+          <span>Contact Me</span>
         </a>
       </div>
     </article>
@@ -245,7 +245,7 @@ const description =
       <div class="aside-nav-box">
         <p class="facts-label">Explore More</p>
         <ul class="facts-nav-links">
-          <li>
+          <!-- <li>
             <a
               href={person.resumeUrl}
               target="_blank"
@@ -253,7 +253,7 @@ const description =
             >
               Online Resume / CV &rarr;
             </a>
-          </li>
+          </li> -->
           <li><a href="/projects">Featured Projects</a></li>
           <li><a href="/competition">Competition Journey</a></li>
           <li>
@@ -271,3 +271,178 @@ const description =
     </aside>
   </div>
 </Base>
+
+<style>
+  .about-layout {
+    padding: 2.5rem 0 5rem;
+  }
+
+  .about-hero-block {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .about-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .about-section h2 {
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 1rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.5rem;
+  }
+
+  .about-section p {
+    color: #c5d0d8;
+    line-height: 1.7;
+    margin: 0 0 1rem;
+    font-size: 1.02rem;
+  }
+
+  .about-highlight-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--raised);
+    border: 1px solid rgba(243, 180, 192, 0.3);
+    border-radius: 10px;
+    margin: 1.5rem 0;
+  }
+
+  @media (min-width: 600px) {
+    .about-highlight-box {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .highlight-badge-col {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+  }
+
+  .about-badge-img {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  }
+
+  .about-highlight-box h3 {
+    margin: 0 0 0.5rem;
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .about-highlight-box p {
+    margin: 0 0 0.5rem;
+    font-size: 0.92rem;
+    color: #c5d0d8;
+  }
+
+  .about-sub-note {
+    font-size: 0.82rem !important;
+    color: var(--muted) !important;
+  }
+
+  .experience-block {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .experience-block:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .academic-timeline-entry {
+    background: rgba(243, 180, 192, 0.02);
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .exp-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .experience-block h3 {
+    margin: 0;
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .exp-location {
+    margin: 0.15rem 0 0.75rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .exp-period {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin: 0.2rem 0 0.25rem;
+  }
+
+  .experience-block ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #c5d0d8;
+    line-height: 1.65;
+  }
+
+  .experience-block li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .tech-pills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1rem;
+  }
+
+  .tech-pill {
+    display: inline-flex;
+    padding: 0.4rem 0.85rem;
+    background: var(--raised);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    transition: all 0.15s ease;
+  }
+
+  .tech-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+</style>

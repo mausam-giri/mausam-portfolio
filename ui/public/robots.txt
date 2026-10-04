@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mausamgiri.in/sitemap.xml
+
+# LLM & AI Agent knowledge references
+# https://llmstxt.org
+# Context file: https://mausamgiri.in/llms.txt

@@ -75,6 +75,36 @@ const competitions = [
     verifiedBadge: false,
   },
 ];
+
+const competitionImages = [
+  {
+    src: "/mausam_giri_worldskills_competition_cloud_computing_competition_area_image.png",
+    alt: "Mausam Kumar Giri at official competitor desk with India flag and countdown clock in the background",
+    title: "Official Cloud Computing Desk",
+    desc: "Official competitor desk under countdown pressure with verified competitor credentials and national colors.",
+    tag: "Countdown · 24m Left",
+    thumbTitle: "Official Desk",
+    thumbTag: "Countdown Clock",
+  },
+  {
+    src: "/mausam_giri_worldskills_competition_cloud_computing_competition_area_image_2.jpg",
+    alt: "Mausam Kumar Giri analyzing cloud architecture specifications at WorldSkills Shanghai",
+    title: "WorldSkills Shanghai Arena",
+    desc: "Architectural strategy & analysis — evaluating multi-region topologies, latency thresholds, and disaster recovery under the clock.",
+    tag: "Strategy & Topology",
+    thumbTitle: "Strategy & Analysis",
+    thumbTag: "Shanghai Arena",
+  },
+  {
+    src: "/mausam_giri_worldskills_competition_cloud_computing_competition_area_image_3.png",
+    alt: "Mausam Kumar Giri at dual-monitor workstation with Team India uniform on the competition floor",
+    title: "Main Competition Workstation",
+    desc: "Real-time AWS Cloud Computing implementation, automated validation pipelines, and live incident mitigation.",
+    tag: "Workstation Arena",
+    thumbTitle: "Arena Workstation",
+    thumbTag: "Dual Monitor Setup",
+  },
+];
 ---
 
 <Base title={title} description={description}>
@@ -91,20 +121,82 @@ const competitions = [
         </p>
       </div>
 
-      <!-- Featured Competition Arena Photo -->
-      <div class="competition-photo-frame">
-        <img
-          src="/worldskills_mausamgiri_3.jpg"
-          alt="Mausam Kumar Giri representing Team India in Cloud Computing at WorldSkills"
-          width="1600"
-          height="1000"
-          loading="eager"
-        />
+      <div class="competition-photo-frame" id="competition-gallery">
+        <div class="gallery-stage" id="gallery-stage">
+          <div class="gallery-badge-row">
+            <span class="gallery-counter-pill" id="gallery-counter">
+              1 / {competitionImages.length}
+            </span>
+          </div>
+
+          <button
+            type="button"
+            class="gallery-nav-btn prev"
+            id="gallery-prev"
+            aria-label="Previous photo"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="gallery-nav-btn next"
+            id="gallery-next"
+            aria-label="Next photo"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Slides -->
+          {
+            competitionImages.map((img, idx) => (
+              <div
+                class={`gallery-slide ${idx === 0 ? "active" : ""}`}
+                data-index={idx}
+                data-title={img.title}
+                data-desc={img.desc}
+                data-tag={img.tag}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  width="1600"
+                  height="1000"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                />
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Dynamic Caption Bar -->
         <div class="competition-photo-caption">
-          <span>
-            <strong>WorldSkills Shanghai Arena</strong> — The international competition
-            workstation.
-          </span>
+          <div class="caption-details" id="gallery-caption-box">
+            <strong id="gallery-active-title"
+              >{competitionImages[0].title}</strong
+            >
+          </div>
           <span class="hero-nation" style="margin: 0; font-size: 0.72rem;">
             <img
               src="/flag_of_india.svg"
@@ -201,27 +293,6 @@ const competitions = [
         </div>
       </section>
 
-      <!-- Technical Domains Tested Under Clock -->
-      <!-- <section class="about-section">
-        <h2>Competition Disciplines & Core Tasks</h2>
-        <p>
-          Every module at WorldSkills tests engineering rigor under strict,
-          real-time stopwatch conditions:
-        </p>
-        <div class="tech-pills-wrap">
-          <span class="tech-pill">Multi-Region VPC & Transit Gateways</span>
-          <span class="tech-pill">Amazon EKS & Kubernetes Deployments</span>
-          <span class="tech-pill">Serverless & DynamoDB Single-Table</span>
-          <span class="tech-pill"
-            >IAM Least-Privilege & KMS Envelope Encryption</span
-          >
-          <span class="tech-pill">Traffic Inspection & Network Firewalls</span>
-          <span class="tech-pill">Automated Terraform & CloudFormation</span>
-          <span class="tech-pill">Live Incident Troubleshooting & Recovery</span
-          >
-        </div>
-      </section> -->
-
       <!-- Bottom Footer Navigation Actions -->
       <div class="page-footer-actions">
         <a href="/projects" class="cta-button">
@@ -263,7 +334,7 @@ const competitions = [
               AWS Skills Profile &rarr;
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a
               href="https://ddnews.gov.in/en/team-india-wins-5-medals-at-global-skills-challenge-australia-2026-strengthens-worldskills-shanghai-preparations/"
               target="_blank"
@@ -271,7 +342,7 @@ const competitions = [
             >
               DD News Official Broadcast &rarr;
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
 
@@ -294,4 +365,143 @@ const competitions = [
       </div>
     </aside>
   </div>
+
+  <script>
+    function initCompetitionGallery() {
+      const gallery = document.getElementById("competition-gallery");
+      if (!gallery) return;
+
+      const slides = Array.from(gallery.querySelectorAll(".gallery-slide"));
+      const thumbs = Array.from(gallery.querySelectorAll(".gallery-thumb-btn"));
+      const prevBtn = document.getElementById("gallery-prev");
+      const nextBtn = document.getElementById("gallery-next");
+      const titleEl = document.getElementById("gallery-active-title");
+      const counterEl = document.getElementById("gallery-counter");
+
+      if (slides.length === 0) return;
+
+      let currentIndex = 0;
+      let timer: number | null = null;
+      const intervalMs = 6000;
+
+      function goToSlide(index: number) {
+        if (index === currentIndex) return;
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        slides[currentIndex].classList.remove("active");
+        if (thumbs[currentIndex]) {
+          thumbs[currentIndex].classList.remove("active");
+          thumbs[currentIndex].setAttribute("aria-selected", "false");
+        }
+
+        currentIndex = index;
+
+        const activeSlide = slides[currentIndex];
+        activeSlide.classList.add("active");
+        if (thumbs[currentIndex]) {
+          thumbs[currentIndex].classList.add("active");
+          thumbs[currentIndex].setAttribute("aria-selected", "true");
+        }
+
+        if (titleEl) {
+          titleEl.textContent =
+            (activeSlide as HTMLElement).dataset.title || "";
+        }
+
+        if (counterEl) {
+          counterEl.textContent = `${currentIndex + 1} / ${slides.length}`;
+        }
+      }
+
+      function nextSlide() {
+        goToSlide((currentIndex + 1) % slides.length);
+      }
+
+      function prevSlide() {
+        goToSlide((currentIndex - 1 + slides.length) % slides.length);
+      }
+
+      function startAutoPlay() {
+        stopAutoPlay();
+        timer = setInterval(nextSlide, intervalMs);
+      }
+
+      function stopAutoPlay() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          prevSlide();
+          startAutoPlay();
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          nextSlide();
+          startAutoPlay();
+        });
+      }
+
+      thumbs.forEach((thumb, idx) => {
+        thumb.addEventListener("click", () => {
+          goToSlide(idx);
+          startAutoPlay();
+        });
+      });
+
+      // Pause when hovered or focused
+      gallery.addEventListener("mouseenter", stopAutoPlay);
+      gallery.addEventListener("mouseleave", startAutoPlay);
+      gallery.addEventListener("focusin", stopAutoPlay);
+      gallery.addEventListener("focusout", startAutoPlay);
+
+      // Keyboard navigation
+      gallery.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          prevSlide();
+          startAutoPlay();
+        } else if (e.key === "ArrowRight") {
+          nextSlide();
+          startAutoPlay();
+        }
+      });
+
+      // Touch swipe support
+      let startX = 0;
+      gallery.addEventListener(
+        "touchstart",
+        (e) => {
+          startX = e.touches[0].clientX;
+          stopAutoPlay();
+        },
+        { passive: true },
+      );
+      gallery.addEventListener(
+        "touchend",
+        (e) => {
+          const deltaX = e.changedTouches[0].clientX - startX;
+          if (deltaX > 40) {
+            prevSlide();
+          } else if (deltaX < -40) {
+            nextSlide();
+          }
+          startAutoPlay();
+        },
+        { passive: true },
+      );
+
+      startAutoPlay();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCompetitionGallery);
+    } else {
+      initCompetitionGallery();
+    }
+  </script>
 </Base>

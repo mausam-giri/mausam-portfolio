@@ -1,6 +1,7 @@
 ---
 import "../styles/base.css";
 import { person } from "../data/site";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -11,6 +12,7 @@ interface Props {
 const { title, description, fullWidth = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isHome = path === "/";
 
 const nav = [
   { href: "/about", label: "About" },
@@ -35,7 +37,8 @@ function current(href: string) {
     <meta name="author" content={person.name} />
     <meta name="theme-color" content="#0c0e14" />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/x-icon" href="/mausam_giri.ico" />
+    <link rel="shortcut icon" href="/mausamgiri.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -48,30 +51,43 @@ function current(href: string) {
     <meta property="og:type" content="website" />
   </head>
   <body>
-    <header class="site-header wrap">
-      <a class="brand" href="/">
-        <span class="mark">MG</span>
-        <span>
-          {person.shortName}
-          <!-- <small>{person.place}</small> -->
-        </span>
-      </a>
-      <nav>
-        {
-          nav.map((item) => (
-            <a
-              href={item.href}
-              aria-current={
-                !item.external && current(item.href) ? "page" : undefined
-              }
-              target={item.external ? "_blank" : undefined}
-              rel={item.external ? "noopener noreferrer" : undefined}
-            >
-              {item.label}
-            </a>
-          ))
-        }
-      </nav>
+    <header
+      class={`site-header ${isHome ? "header-landing" : "wrap"}`}
+      id="site-header"
+    >
+      <div class={isHome ? "header-landing-inner" : "header-inner"}>
+        <a class="brand" href="/" aria-label="Mausam Giri Home">
+          <div class="mark brand-logo-frame">
+            <img
+              src="/mausamgiri_120.png"
+              alt="Mausam Giri"
+              width="36"
+              height="36"
+              class="brand-logo-img"
+            />
+            <div class="brand-logo-grade"></div>
+          </div>
+          <span class="brand-name">
+            {person.shortName}
+          </span>
+        </a>
+        <nav>
+          {
+            nav.map((item) => (
+              <a
+                href={item.href}
+                aria-current={
+                  !item.external && current(item.href) ? "page" : undefined
+                }
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
     </header>
     {
       fullWidth ? (
@@ -82,13 +98,7 @@ function current(href: string) {
         </main>
       )
     }
-    <footer class="site-footer wrap">
-      <a href={`mailto:${person.email}`}>{person.email}</a>
-      <a href={person.linkedin}>LinkedIn</a>
-      <a href={person.github}>GitHub</a>
-      <a href={person.blogs}>Blogs</a>
-      <a href={person.tools}>Tools</a>
-    </footer>
+    <Footer />
 
     <script is:inline>
       (function () {
@@ -98,8 +108,13 @@ function current(href: string) {
             const data = {
               path: window.location.pathname,
               referrer: document.referrer || "",
-              timezone: (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : "",
-              screen: window.screen ? `${window.screen.width}x${window.screen.height}` : "",
+              timezone:
+                Intl && Intl.DateTimeFormat
+                  ? Intl.DateTimeFormat().resolvedOptions().timeZone
+                  : "",
+              screen: window.screen
+                ? `${window.screen.width}x${window.screen.height}`
+                : "",
             };
             const payload = JSON.stringify(data);
             const endpoint = "/api/visit";
@@ -117,6 +132,36 @@ function current(href: string) {
             }
           } catch (e) {}
         });
+      })();
+    </script>
+
+    <!-- Header scroll trigger for landing page -->
+    <script is:inline>
+      (function () {
+        const header = document.querySelector(".header-landing");
+        if (!header) return;
+
+        let ticking = false;
+        function updateHeader() {
+          if (window.scrollY > 100) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+          ticking = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!ticking) {
+              window.requestAnimationFrame(updateHeader);
+              ticking = true;
+            }
+          },
+          { passive: true },
+        );
+        updateHeader();
       })();
     </script>
   </body>

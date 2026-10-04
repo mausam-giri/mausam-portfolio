@@ -1,0 +1,233 @@
+---
+import { person } from "../data/site";
+import Icons from "./Icons.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer" id="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-copy"
+          >&copy; {currentYear} {person.name}. All rights reserved.</span
+        >
+        <span class="footer-dot-sep">&bull;</span>
+        <div class="footer-social-row">
+          <a
+            href={person.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-btn"
+            aria-label="GitHub Profile"
+            title="GitHub"
+          >
+            <Icons name="github" size={16} />
+          </a>
+          <a
+            href={person.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-btn"
+            aria-label="LinkedIn Profile"
+            title="LinkedIn"
+          >
+            <Icons name="linkedin" size={16} />
+          </a>
+          <a
+            href={person.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-btn"
+            aria-label="Instagram Profile"
+            title="Instagram"
+          >
+            <Icons name="instagram" size={16} />
+          </a>
+          <a
+            href={person.credlyProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-btn"
+            aria-label="Credly Profile"
+            title="Credly"
+          >
+            <Icons name="award" size={16} />
+          </a>
+          <a
+            href={`mailto:${person.email}`}
+            class="footer-social-btn"
+            aria-label="Email Mausam"
+            title="Email"
+          >
+            <Icons name="email" size={16} />
+          </a>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="footer-back-to-top"
+        id="footer-back-to-top"
+        aria-label="Scroll back to top of page"
+      >
+        <span>Back to top</span>
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1.75rem 0;
+    background: linear-gradient(
+      180deg,
+      rgba(14, 17, 24, 0.4) 0%,
+      rgba(9, 11, 16, 0.95) 100%
+    );
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+
+  .footer-wrap {
+    width: min(1280px, calc(100% - 2rem));
+    margin: 0 auto;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+
+  .footer-copy {
+    color: var(--muted);
+    line-height: 1;
+  }
+
+  .footer-dot-sep {
+    opacity: 0.35;
+    font-size: 0.85rem;
+  }
+
+  .footer-social-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .footer-social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .footer-social-btn:hover {
+    color: var(--ink);
+    background: rgba(243, 180, 192, 0.12);
+    border-color: rgba(243, 180, 192, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  }
+
+  .footer-back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.38rem 0.8rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .footer-back-to-top:hover {
+    color: var(--ink);
+    border-color: rgba(243, 180, 192, 0.4);
+    background: rgba(243, 180, 192, 0.1);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 680px) {
+    .site-footer {
+      margin-top: 0.5rem;
+      padding: 1.5rem 0;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.15rem;
+    }
+
+    .footer-left {
+      flex-direction: column;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .footer-dot-sep {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  function initFooter() {
+    const backToTopBtn = document.getElementById("footer-back-to-top");
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initFooter);
+  } else {
+    initFooter();
+  }
+</script>
